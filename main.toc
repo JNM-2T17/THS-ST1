@@ -25,11 +25,21 @@
 \contentsline {section}{\numberline {2.3}Community Evaluation Metrics}{19}
 \contentsline {chapter}{\numberline {3}Theoretical Framework}{23}
 \contentsline {section}{\numberline {3.1}Data Collection}{23}
-\contentsline {section}{\numberline {3.2}Community Detection}{23}
+\contentsline {section}{\numberline {3.2}Community Detection}{24}
 \contentsline {section}{\numberline {3.3}Similarity Parameters}{28}
-\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{29}
-\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{30}
-\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{33}
-\contentsline {chapter}{\numberline {A}Research Ethics Documents}{34}
-\contentsline {chapter}{\numberline {B}Resource Persons}{35}
-\contentsline {chapter}{References}{36}
+\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{28}
+\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{29}
+\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{30}
+\contentsline {chapter}{\numberline {4}The System Model, Algorithm, and Design}{31}
+\contentsline {section}{\numberline {4.1}System Overview}{31}
+\contentsline {section}{\numberline {4.2}System Objectives}{31}
+\contentsline {section}{\numberline {4.3}System Scope and Limitations}{32}
+\contentsline {section}{\numberline {4.4}Architectural Design}{32}
+\contentsline {section}{\numberline {4.5}System Functions}{33}
+\contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{33}
+\contentsline {subsection}{\numberline {4.5.2}Select Parameter}{34}
+\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{35}
+\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{36}
+\contentsline {chapter}{\numberline {A}Research Ethics Documents}{37}
+\contentsline {chapter}{\numberline {B}Resource Persons}{38}
+\contentsline {chapter}{References}{39}

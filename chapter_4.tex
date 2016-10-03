@@ -8,3 +8,157 @@
 
 \chapter{The System Model, Algorithm, and Design}
 \label{sec:sysmodel}
+
+\section{System Overview}
+The system is a web application that generates communities from live data retrieved from Facebook and Twitter. 
+On startup, the system would collect and clean data from Facebook and Twitter and wait for the user to select 
+an algorithm. Once an algorithm is selected, the user then selects a similarity parameter that is compatible
+with the chosen algorithm. Finally, the user chooses to generate communities from the data. The system displays 
+the graphical representation of the communities as well as the community evaluation metrics that can be applied 
+to the communities based from the chosen algorithm and parameter. The system only has one type of user, which 
+can select an algorithm, a parameter, and generate and view communities.
+
+\section{System Objectives}
+The system must be able to generate communities using a specific algorithm and similarity parameter. The specific objectives are as follows:
+
+\begin{itemize}
+	\item To collect data from Facebook and Twitter
+	\item To effectively clean data collected from the social networks
+	\item To be able to detect communities using the supported algorithms and parameters
+	\item To be able to display a visualization of the communities
+	\item To be able to display the evaluation metrics for the communities
+\end{itemize}
+
+\section{System Scope and Limitations}
+Data collection is necessary in order to detect the communities from the social network.
+Data collected from the social networks will only include the user posts, the follow network (or friend network if from Facebook),
+hashtag usage, mentions, and the demographic details such as age and sex.
+
+Cleaning the data is necessary in order to reduce noise in the data as well as to ensure the veracity of the data. This 
+would improve the detected communities. \textless Insert more\textgreater
+
+The only algorithms to be considered in the system are divisive and agglomerative hierarchical clustering and fast greedy optimization
+of modularity ($FGM$). For the first two algorithms, the only parameters to be considered are the positive/negative valence of posts, 
+the subjective/objective valence of posts, the cosine similarity of frequency of topics mentioned, the follow network, hashtag usage,
+and mentions.
+
+The visualization is necessary in order to provide a more intuitive represenation of the communities. The visualization is limited to 
+a graphical visualization to be displayed via HTML5.
+
+Displaying the evaluation metrics is necessary to show the comparative effectiveness of different algorithm and parameter combinations.
+The evaluation metrics to be considered are the modularity of the communities and the average mutual following links per user per community
+($FPUPC$).
+
+
+\section{Architectural Design}
+The system will follow the MVC architecture. The view module will use HTML5, CSS3, and Javascript. The 
+controller and model will be implemented as code.
+
+The model module will include a data collection class, representative models for the data collected, and a computational model.
+%The UML class diagram for the model module is found in figure 
+
+\textless Data Collection Here\textgreater
+
+For the data representation, this comprises a User class and a Post interface.
+The Post interface has two concrete realizations: Tweet for Twitter posts and FBPost for Facebook posts.
+
+The computational model will have a central class Clusterer which takes a list of users as an attribute, 
+as well as an Algorithm object. The algorithm follows the Strategy design pattern, which abstracts the algorithms in
+concrete implementations of the Algorithm interface. The Algorithm Interface contains an instance of the Parameter interface
+which also follows the Strategy design pattern. In this case, retrieving the similarities between two User objects is abstracted,
+to be implemented by the concrete realizations of the Parameter interface. By setting the algorithm and parameter, the Clusterer objects 
+runs the algorithm and produces a list of Community objects, which have two derived attributes $modularity$ and $FPUPC$. The Clusterer caches
+these Communities and can also return the aggregate $modularity$ and $FPUPC$ of the set of detected communities.
+
+The controller simply interfaces all the model submodules. It checks on startup if the data collection module is done collecting and cleaning data. It passes the data collected, represented as User and Post classes, to the Clusterer class, after setting an algorithm and parameter. This produces the Community objects that the controller then passes as part of the HTTP response.
+
+\textless View stuff here\textgreater
+
+\section{System Functions}
+
+This section outlines the different functions of the system.
+
+\subsection{Select Algorithm}
+
+The user selects an algorithm in order to set a required parameter for generating communities.
+
+Pre-condition: The system has finished collecting data from the data collection module. 
+The main menu is the current screen.
+
+Post-condition: The system has an algorithm to use for generating communities. The ``Select Parameter'' option
+is now enabled in the main menu. The allowed parameters have been enabled in the Select Parameter screen.
+
+Scenario:
+\begin{enumerate}
+	\item The user chooses to select an algorithm.
+	\item The system displays all the algorithms supported by the system.
+	\item The user selects one of the algorithms.
+	\item The user confirms their choice.
+	\item The system redirects to the main menu and displays the selected algorithm as part of the system status.
+\end{enumerate}
+
+Acceptance Criteria:
+\begin{itemize}
+	\item Test if the algorithm selected is valid.
+	\item Test if only one algorithm is selected.
+	\item Test if the algorithm is displayed as part of the system status.
+	\item Test if the system redirects to the main menu.
+	\item Test if the ``Select Parameter'' option is now enabled.
+\end{itemize}
+
+\subsection{Select Parameter}
+
+The user selects a similarity parameter in order to set a required parameter for generating communities.
+
+Pre-condition: The system has finished collecting data from the data collection module. An algorithm has
+already been selected.
+
+Post-condition: The system has a similarity parameter to use for generating communities. The ``Generate Communities'' option
+has been enabled in the main menu.
+
+Scenario:
+\begin{enumerate}
+	\item The user chooses to select a parameter.
+	\item The system displays all parameters compatible with the selected algorithm.
+	\item The user selects one parameter to use.
+	\item The user confirms their choice.
+	\item The system redirects to the main menu with the ``Generate Communities'' option enabled.
+\end{enumerate}
+
+Acceptance Criteria:
+\begin{itemize}
+	\item Test if the user has already selected an algorithm.
+	\item Test if only the parameters compatible with the selected algorithm are displayed in the ``Select Parameter'' screen.
+	\item Test if the parameter selected is a valid choice.
+	\item Test if only one parameter is selected.
+	\item Test if the system redirects to the main menu.
+	\item Test if the ``Generate Communities'' option is enabled.
+\end{itemize}
+
+\subsection{Generate Communities}
+
+The user asks the system to generate communities to see the graphical representation of the communities and to see the 
+evaluation metrics of the generated communities for the selected algorithm-parameter combination.
+
+Pre-condition: The system has finished collecting data from the data collection module. An algorithm and parameter has
+already been selected.
+
+Post-condition: The system is now displaying a graphical representation of the communities and the value of the evaluation
+metrics.
+
+Scenario:
+\begin{enumerate}
+	\item The user chooses to generate communities.
+	\item The system computes for the communities using the selected algorithm and parameter.
+	\item The system displays the graphical representation of the communities as well as the values of the evaluation metrics.
+\end{enumerate}
+
+Acceptance Criteria:
+\begin{itemize}
+	\item Test if the user has already selected an algorithm and parameter.
+	\item Test if the detected communities are appropriate for the chosen algorithm and parameter.
+	\item Test if the evaluation metrics' values are correct.
+\end{itemize}
+
+\section{Physical Environment and Resources}
+The software was developed using Python as a language and Django as a framework for the web application. Python 3.5 is required to run the code. The web application must be run by a server that supports Django 1.10.1. 

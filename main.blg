@@ -1,15 +1,86 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: apacite.bst
 A level-1 auxiliary file: title_page.aux
+A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: chapter_1.aux
 A level-1 auxiliary file: chapter_2.aux
 A level-1 auxiliary file: chapter_3.aux
+A level-1 auxiliary file: chapter_4.aux
+A level-1 auxiliary file: appendix_B.aux
 A level-1 auxiliary file: appendix_C.aux
 Database file #1: myreferences.bib
+Warning--entry type for "Amor:2015" isn't style-file defined
+--line 1 of file myreferences.bib
 Warning--entry type for "McCarthy:2014" isn't style-file defined
 --line 139 of file myreferences.bib
+Repeated entry---line 224 of file myreferences.bib
+ : @article{Bakillah:2014
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 243 of file myreferences.bib
+ : @article{Bryden:2013
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 258 of file myreferences.bib
+ : @article{Cao:2015
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 275 of file myreferences.bib
+ : @article{Clauset:2004
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 289 of file myreferences.bib
+ : @article{Darmon:2015
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 303 of file myreferences.bib
+ : @article{Deitrick:2013
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 312 of file myreferences.bib
+ : @inproceedings{Java:2007
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 322 of file myreferences.bib
+ : @article{Lancichinetti:2011
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 335 of file myreferences.bib
+ : @inproceedings{Lim:2012:0
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 342 of file myreferences.bib
+ : @inbook{Lim:2012:1
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 354 of file myreferences.bib
+ : @online{McCarthy:2014
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 372 of file myreferences.bib
+ : @article{Papadopoulos:2012
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 401 of file myreferences.bib
+ : @book{Tang:2010
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 412 of file myreferences.bib
+ : @article{West:2014
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 420 of file myreferences.bib
+ : @phdthesis{Xie:2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 431 of file myreferences.bib
+ : @article{Zhang:2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Ferrara:2012"
+Warning--I didn't find a database entry for "Mitchell:1997"
+Warning--I didn't find a database entry for "Newman:2003"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Warning--No journal in Amor:2015
 Warning--No journal in West:2014
 Warning--No school in Xie:2012
-(There were 4 warnings)
+(There were 16 error messages)

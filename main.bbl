@@ -22,12 +22,10 @@ Amor, B.%
 \newblock
 \APACrefYearMonthDay{2015}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Community detection and role identification in directed
+\APACrefbtitle {Community detection and role identification in directed
   networks: understanding the Twitter network of the care.data debate.}
   {Community detection and role identification in directed networks:
-  understanding the twitter network of the care.data debate.}{\BBCQ}
-\newblock
-
+  understanding the twitter network of the care.data debate.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
