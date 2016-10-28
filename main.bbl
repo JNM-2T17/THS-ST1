@@ -338,28 +338,31 @@ Lim, K\BPBI H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-McCarthy%
+Newman%
+\ \BBA {} Girvan%
 }{%
-McCarthy%
+Newman%
+\ \BBA {} Girvan%
 }{%
-{\protect \APACyear {2014}}%
+{\protect \APACyear {2004}}%
 }]{%
-McCarthy:2014}
+Newman:2004}
 \APACinsertmetastar {%
-McCarthy:2014}%
+Newman:2004}%
 \begin{APACrefauthors}%
-McCarthy, N.%
+Newman, M\BPBI E\BPBI J.%
+\BCBT {}\ \BBA {} Girvan, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2014}{{\APACmonth{10}}}{}.
+\APACrefYearMonthDay{2004}{}{}.
 \newblock
-\APACrefbtitle {Facebook Versus Twitter In Numbers [Infographic].} {Facebook
-  versus twitter in numbers [infographic].}
+{\BBOQ}\APACrefatitle {Finding and evaluating community structure in networks}
+  {Finding and evaluating community structure in networks}.{\BBCQ}
 \newblock
-\begin{APACrefURL}
-  \url{http://www.forbes.com/sites/niallmccarthy/2014/10/14/facebook-versus-twitter-infographic/#6a24b33f7e18}
-  \end{APACrefURL}
+\APACjournalVolNumPages{Physical Review E Phys. Rev. E}{69}{2}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/physreve.69.026113} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

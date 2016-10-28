@@ -2,44 +2,45 @@
 \contentsline {section}{\numberline {1.1}Overview of the Current State of Technology}{1}
 \contentsline {section}{\numberline {1.2}Research Objectives}{2}
 \contentsline {subsection}{\numberline {1.2.1}General Objective}{2}
-\contentsline {subsection}{\numberline {1.2.2}Specific Objectives}{3}
+\contentsline {subsection}{\numberline {1.2.2}Specific Objectives}{2}
 \contentsline {section}{\numberline {1.3}Scope and Limitations of the Research}{3}
 \contentsline {section}{\numberline {1.4}Significance of the Research}{4}
 \contentsline {section}{\numberline {1.5}Research Methodology}{4}
 \contentsline {subsection}{\numberline {1.5.1}Preparation}{4}
 \contentsline {subsection}{\numberline {1.5.2}Iterative Experimentation}{5}
 \contentsline {subsubsection}{Similarity Parameter Selection}{5}
-\contentsline {subsubsection}{Community Detection Algorithm Selection}{6}
+\contentsline {subsubsection}{Community Detection Algorithm Selection}{5}
 \contentsline {subsubsection}{Data Collection}{6}
 \contentsline {subsubsection}{Model Design}{6}
-\contentsline {subsubsection}{Model Implementation}{7}
-\contentsline {subsubsection}{Model Evaluation}{7}
+\contentsline {subsubsection}{Model Implementation}{6}
+\contentsline {subsubsection}{Model Evaluation}{6}
 \contentsline {subsubsection}{Documentation}{7}
 \contentsline {subsection}{\numberline {1.5.3}Analysis and Finalization}{7}
-\contentsline {section}{\numberline {1.6}Calendar of Activities}{9}
-\contentsline {chapter}{\numberline {2}Review of Related Literature}{10}
-\contentsline {section}{\numberline {2.1}Community Detection}{10}
-\contentsline {section}{\numberline {2.2}Similarity Parameters}{16}
-\contentsline {subsection}{\numberline {2.2.1}Sentiment Analysis}{16}
-\contentsline {subsection}{\numberline {2.2.2}Other Parameters}{18}
-\contentsline {section}{\numberline {2.3}Community Evaluation Metrics}{19}
-\contentsline {chapter}{\numberline {3}Theoretical Framework}{23}
-\contentsline {section}{\numberline {3.1}Data Collection}{23}
-\contentsline {section}{\numberline {3.2}Community Detection}{24}
-\contentsline {section}{\numberline {3.3}Similarity Parameters}{28}
-\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{28}
-\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{29}
-\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{30}
-\contentsline {chapter}{\numberline {4}The System Model, Algorithm, and Design}{31}
-\contentsline {section}{\numberline {4.1}System Overview}{31}
-\contentsline {section}{\numberline {4.2}System Objectives}{31}
-\contentsline {section}{\numberline {4.3}System Scope and Limitations}{32}
-\contentsline {section}{\numberline {4.4}Architectural Design}{32}
+\contentsline {section}{\numberline {1.6}Calendar of Activities}{8}
+\contentsline {chapter}{\numberline {2}Review of Related Literature}{9}
+\contentsline {section}{\numberline {2.1}Community Detection}{9}
+\contentsline {section}{\numberline {2.2}Similarity Parameters}{15}
+\contentsline {subsection}{\numberline {2.2.1}Sentiment Analysis}{15}
+\contentsline {subsection}{\numberline {2.2.2}Other Parameters}{16}
+\contentsline {section}{\numberline {2.3}Community Evaluation Metrics}{18}
+\contentsline {chapter}{\numberline {3}Theoretical Framework}{22}
+\contentsline {section}{\numberline {3.1}Data Collection}{22}
+\contentsline {section}{\numberline {3.2}Community Detection}{23}
+\contentsline {section}{\numberline {3.3}Similarity Parameters}{27}
+\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{27}
+\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{28}
+\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{29}
+\contentsline {chapter}{\numberline {4}The System Model, Algorithm, and Design}{30}
+\contentsline {section}{\numberline {4.1}System Overview}{30}
+\contentsline {section}{\numberline {4.2}System Objectives}{30}
+\contentsline {section}{\numberline {4.3}System Scope and Limitations}{31}
+\contentsline {section}{\numberline {4.4}Architectural Design}{31}
 \contentsline {section}{\numberline {4.5}System Functions}{33}
-\contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{33}
-\contentsline {subsection}{\numberline {4.5.2}Select Parameter}{34}
-\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{35}
+\contentsline {subsection}{\numberline {4.5.1}Collect Data}{33}
+\contentsline {subsection}{\numberline {4.5.2}Select Algorithm}{34}
+\contentsline {subsection}{\numberline {4.5.3}Select Parameter}{35}
+\contentsline {subsection}{\numberline {4.5.4}Generate Communities}{36}
 \contentsline {section}{\numberline {4.6}Physical Environment and Resources}{36}
-\contentsline {chapter}{\numberline {A}Research Ethics Documents}{37}
-\contentsline {chapter}{\numberline {B}Resource Persons}{38}
-\contentsline {chapter}{References}{39}
+\contentsline {chapter}{\numberline {A}Research Ethics Documents}{38}
+\contentsline {chapter}{\numberline {B}Resource Persons}{39}
+\contentsline {chapter}{References}{40}

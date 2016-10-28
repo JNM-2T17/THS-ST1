@@ -10,8 +10,8 @@
 \label{sec:sysmodel}
 
 \section{System Overview}
-The system is a web application that generates communities from live data retrieved from Facebook and Twitter. 
-On startup, the system would collect and clean data from Facebook and Twitter and wait for the user to select 
+The system is a web application that generates communities from live data retrieved from Twitter. 
+On startup, the system would collect and clean data from Twitter and wait for the user to select 
 an algorithm. Once an algorithm is selected, the user then selects a similarity parameter that is compatible
 with the chosen algorithm. Finally, the user chooses to generate communities from the data. The system displays 
 the graphical representation of the communities as well as the community evaluation metrics that can be applied 
@@ -22,17 +22,17 @@ can select an algorithm, a parameter, and generate and view communities.
 The system must be able to generate communities using a specific algorithm and similarity parameter. The specific objectives are as follows:
 
 \begin{itemize}
-	\item To collect data from Facebook and Twitter
-	\item To effectively clean data collected from the social networks
-	\item To be able to detect communities using the supported algorithms and parameters
-	\item To be able to display a visualization of the communities
-	\item To be able to display the evaluation metrics for the communities
+	\item To collect data from Twitter
+	\item To clean data collected from the social networks
+	\item To detect communities using the supported algorithms and parameters
+	\item To display a visualization of the communities
+	\item To display the evaluation metrics for the communities
 \end{itemize}
 
 \section{System Scope and Limitations}
 Data collection is necessary in order to detect the communities from the social network.
 Data collected from the social networks will only include the user posts, the follow network (or friend network if from Facebook),
-hashtag usage, mentions, and the demographic details such as age and sex.
+hashtag usage, and mentions.
 
 Cleaning the data is necessary in order to reduce noise in the data as well as to ensure the veracity of the data. This 
 would improve the detected communities. \textless Insert more\textgreater
@@ -55,12 +55,24 @@ The system will follow the MVC architecture. The view module will use HTML5, CSS
 controller and model will be implemented as code.
 
 The model module will include a data collection class, representative models for the data collected, and a computational model.
-%The UML class diagram for the model module is found in figure 
+The UML class diagram for the model module is found in figure \ref{fig:uml}.
+
+\newpage
+
+\begin{landscape}
+\begin{figure}
+	\centering
+	\includegraphics[width=1.4\textwidth]{THS-ST1_FernandezPobleteSanPedroTan_UML_v1}
+	\caption{UML Diagram of the Model Component of the Proposed System}
+	\label{fig:uml}	
+\end{figure}
+\end{landscape}
+
+\newpage
 
 \textless Data Collection Here\textgreater
 
-For the data representation, this comprises a User class and a Post interface.
-The Post interface has two concrete realizations: Tweet for Twitter posts and FBPost for Facebook posts.
+For the data representation, this comprises a User class and a Tweet class.
 
 The computational model will have a central class Clusterer which takes a list of users as an attribute, 
 as well as an Algorithm object. The algorithm follows the Strategy design pattern, which abstracts the algorithms in
@@ -78,11 +90,35 @@ The controller simply interfaces all the model submodules. It checks on startup 
 
 This section outlines the different functions of the system.
 
+\subsection{Collect Data}
+\label{us:colldat}
+
+The user prompts the system to collect new data to have a more updated dataset to extract communities from.
+
+Pre-condition: The system is running. (This is automatically run on server startup.)
+
+Post-condition: The system now has an updated dataset to extract communities from.
+
+Scenario:
+\begin{enumerate}
+	\item The user chooses to collect data.
+	\item The system collects data from Twitter and cleans the data.
+	\item The system displays a progress bar during this process.
+	\item The system notifies the user that data collection and cleaning is finished.
+\end{enumerate}
+
+Acceptance Criteria:
+\begin{itemize}
+	\item Test if there is stored data. (User story \ref{us:gencom} should output proper communities.)
+	\item Test if data is clean.
+\end{itemize}
+
 \subsection{Select Algorithm}
+\label{us:selectalgo}
 
 The user selects an algorithm in order to set a required parameter for generating communities.
 
-Pre-condition: The system has finished collecting data from the data collection module. 
+Pre-condition: The system has finished collecting data from user story \ref{us:colldat}. 
 The main menu is the current screen.
 
 Post-condition: The system has an algorithm to use for generating communities. The ``Select Parameter'' option
@@ -107,11 +143,11 @@ Acceptance Criteria:
 \end{itemize}
 
 \subsection{Select Parameter}
+\label{us:selectparam}
 
 The user selects a similarity parameter in order to set a required parameter for generating communities.
 
-Pre-condition: The system has finished collecting data from the data collection module. An algorithm has
-already been selected.
+Pre-condition: The system has finished collecting data from the data collection module. User story \ref{us:selectalgo} has been finished.
 
 Post-condition: The system has a similarity parameter to use for generating communities. The ``Generate Communities'' option
 has been enabled in the main menu.
@@ -136,12 +172,12 @@ Acceptance Criteria:
 \end{itemize}
 
 \subsection{Generate Communities}
+\label{us:gencom}
 
 The user asks the system to generate communities to see the graphical representation of the communities and to see the 
 evaluation metrics of the generated communities for the selected algorithm-parameter combination.
 
-Pre-condition: The system has finished collecting data from the data collection module. An algorithm and parameter has
-already been selected.
+Pre-condition: The system has finished collecting data from the data collection module. User stories \ref{us:selectalgo} and \ref{us:selectparam} have been finished.
 
 Post-condition: The system is now displaying a graphical representation of the communities and the value of the evaluation
 metrics.

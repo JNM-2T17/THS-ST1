@@ -1,0 +1,21 @@
+-Concrete Parameters interactions with User classes
+-iGraph representation
+-separate realization from association on Algorithm interface
+-don't focus on UI, focus on submodules
+-Look for random seeds for data collections (Random Celebrity Generator :-P)
+
+Introduction (5 slides)
+	-Background 
+	-Why you want to do this
+	-Significance
+	-Related Works
+	-Problem Statement
+Objectives (1 slide for general, 1 slide per specific)
+	-Specific Objectives
+	-Scope and Limitations
+	-Theoretical Framework
+System (15 slides)
+	-Flow
+	-Objectives
+	-Architecture
+	

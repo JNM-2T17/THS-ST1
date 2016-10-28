@@ -25,7 +25,7 @@ Individual opinions of one specific user towards another were also studied by \c
 
 In addition to these works, some visualizations have already been created such as SocialHelix by \citeA{Cao:2015}, which uses the temporal extent of social communities, topics or events discussed, and user responses to topics and events to classify users into two sides of the argument. They then depict the two sides of an argument as strands in a double helix and their intersections defines events.
 
-However, it is noticeable that all of these studies only involved Twitter and mainly used only common Twitter features for similarity analysis such as following networks, hashtag frequency, and retweet networks. According to \citeA{McCarthy:2014}, Facebook has 1.3 billion monthly active users compared to Twitter\vtick s 271 million. In addition to this, Facebook has certain unique features such as group membership, events, and reactions, which could provide more similarity parameters for community detection. Given that the volume of studies on community detection in Twitter outweighs the volume of studies about Facebook, the proponents wish to include Facebook, in addition to Twitter, in the considerations to determine which algorithms and features provide more accurate communities.
+However, most of these studies already had preselected features and algorithms to work with or had specific features in mind before implementing their models. It would be interesting to compare the quality of communities produced by different combinations of algorithms and similarity parameters.
 
 \section{Research Objectives}
 \label{sec:researchobjectives}
@@ -33,7 +33,7 @@ However, it is noticeable that all of these studies only involved Twitter and ma
 \subsection{General Objective}
 \label{sec:generalobjective}
 
-To produce a visualization of detected communities on data found on Facebook and Twitter.
+To determine which combination of community detection algorithm and similarity parameter produces the best communities
 
 \subsection{Specific Objectives}
 \label{sec:specificobjectives}
@@ -42,27 +42,27 @@ To produce a visualization of detected communities on data found on Facebook and
 	\item To build a corpus of social media data;
 	\item To determine the various techniques and algorithms in detecting communities;
 	\item To determine the parameters/features to be used in detecting the communities;
-	\item To determine how to evaluate the correctness of the detected communities;
+	\item To determine how to evaluate the correctness of the detected communities given a particular combination of algorithm and similarity parameter;
 	\item To implement a tool for the visualization of detected communities using the gathered information
 \end{enumerate}
 
 \section{Scope and Limitations of the Research}
 \label{sec:scopelimitations}
 
-In order to perform a study on community detection, it is necessary to build a corpus of social media data. This research will cover searching for Application Programming Interfaces (API) that will allow extraction of data from Facebook and Twitter and then using these APIs to build a body of data where community detection can be performed on. Data will include posts, profile information, and network information such as following list, follower list, and group membership.
+In order to perform a study on community detection, it is necessary to build a corpus of social media data. This research will cover searching for Application Programming Interfaces (API) that will allow extraction of data from Twitter and then using these APIs to build a body of data where community detection can be performed on. Data will include posts, profile information, and network information such as following list, follower list, and group membership.
 
 Different techniques have been used in community detection. Among these techniques are the Infomap algorithm and the speaker-listener label propagation algorithm \cite{Deitrick:2013}.  This research will consider algorithms found in the review of related literature, including the Markov stability model, clique percolation method, k-means clustering, and divisive hierarchical clustering.
 
-Before the proponents implement selected community detection algorithms, it is necessary to identify which parameters/features/attributes indicate one user\vtick s similarity to another. Inquiry will be done to identify these parameters, specifically how to extract them based on the raw data. The research will be limited to sentiment analysis and elements which can be extracted from a user\vtick s post, which may include follow networks, hashtags, mentions, and retweets, which were mostly inspired from literature which focused on Twitter \cite{Deitrick:2013,Zhang:2012,Lim:2012:1}. As such, Facebook specific features such as membership in groups and event participation may also be considered.
+Before the proponents implement selected community detection algorithms, it is necessary to identify which parameters/features/attributes indicate one user\vtick s similarity to another. Inquiry will be done to identify these parameters, specifically how to extract them based on the raw data. The research will be limited to sentiment analysis and elements which can be extracted from a user\vtick s post, which may include follow networks, hashtags, mentions, and retweets, which were mostly inspired from literature which focused on Twitter \cite{Deitrick:2013,Zhang:2012,Lim:2012:1}. 
 
 After community detection, it is necessary to determine whether the detected communities are sensible. Inquiry will be done to find appropriate metrics in determining the accuracy of detected communities. These algorithms will include average mutual following links per user per community or FPUPC \cite{Zhang:2012}, modularity \cite{Deitrick:2013}, and clustering coefficient \cite{Lim:2012:1}.
 
-After inquiring about multiple community detection algorithms and similarity parameters, it will be necessary to implement the selected algorithms in a working system. The community detection model will then be implemented and augmented by a visualization tool which will be created that will only consider communities detected from data gathered from Facebook and Twitter.
+After inquiring about multiple community detection algorithms and similarity parameters, it will be necessary to implement the selected algorithms in a working system. The community detection model will then be implemented and augmented by a visualization tool which will be created that will only consider communities detected from data gathered from Twitter.
 
 \section{Significance of the Research}
 \label{sec:significance}
 
-Community detection is already a widely researched topic in the field of computer science. Our study will contribute to that field by exploring a domain that is not a frequently explored in the field of community detection, Facebook. Since Facebook has a larger user base than Twitter and more features, our study may determine if Facebook would produce better communities than Twitter, which would influence future studies about community detection in social media.
+Community detection is already a widely researched topic in the field of computer science. Our study will contribute to that field by exploring a domain that is not a frequently explored which is a comparative analysis of combinations of algorithms and parameters.
 
 Our study can also be a very useful tool in the domains of viral marketing and political endorsement. This means that companies and governments may benefit from this research. Interested companies may use the result of our study to improve their sales and marketing. The government may use our study to gauge public opinion on certain issues and to see analytics about which geographical areas have a particular opinion. 
 
@@ -71,9 +71,9 @@ This chapter details the research activities to be done for the duration of this
 
 \subsection{Preparation}
 
-This phase constitutes the gathering of information pertinent to the study. This includes reviewing related literature and building a theoretical framework. The review of related literature step will only take two weeks for the initial bibliography. The theoretical framework step will overlap with the review of related literature step and possibly take two more weeks. This step will include gathering implementation details for the variables in the experimentation phase: community detection algorithms found in the review of related literature; computing similarity parameters, including sentiment analysis and features in Twitter and Facebook; and evaluation metrics. 
+This phase constitutes the gathering of information pertinent to the study. This includes reviewing related literature and building a theoretical framework. The review of related literature step will only take two weeks for the initial bibliography. The theoretical framework step will overlap with the review of related literature step and possibly take two more weeks. This step will include gathering implementation details for the variables in the experimentation phase: community detection algorithms found in the review of related literature; computing similarity parameters, including sentiment analysis and features in Twitter; and evaluation metrics. 
 
-This phase includes finding the necessary API\vtick s to use in collecting data from Facebook and Twitter. Selection of the platform to host the data and a programming language to implement the model is also part of this phase\vtick s activities. 
+This phase includes finding the necessary API\vtick s to use in collecting data from Twitter. Selection of the platform to host the data and a programming language to implement the model is also part of this phase\vtick s activities. 
 
 This phase will take up the first month of the study. It is necessary because it provides the theoretical framework around which the entire study will be based on, as well as deciding the platform and programming language to be used throughout the study. All design and implementation performed in the project will be based on the information gathered in this phase.
 
@@ -85,7 +85,7 @@ This phase deals with design, implementation, and testing of multiple community 
 
 Since this study aims to produce an accurate visualization of communities in social media, it is necessary to find out which parameter would produce the best communities based on the evaluation metric found in the preparation phase. This is the reason why there will be multiple iterations. 
 
-Based on the RRL and the Theoretical Framework, a similarity parameter will be selected. This feature need not be applicable to both Facebook and Twitter. If it is not available in one of the social networks, data from that network will not be used.
+Based on the RRL and the Theoretical Framework, a similarity parameter will be selected from the features identified in the preparation phase.
 
 \subsubsection{Community Detection Algorithm Selection}
 
@@ -95,9 +95,7 @@ Based on the RRL and the Theoretical Framework, a community detection algorithm 
 
 \subsubsection{Data Collection}
 
-User data will be collected from Facebook and Twitter, if the similarity parameter chosen applies to both. Otherwise, data will only be collected from the social network which the parameter applies to. The API\vtick s will be used to gather the data. This will be done in order to have a corpus of data to perform the algorithms on.
-
-Afterwards, each user will be anonymized. This includes the username and the real name.  This anonymization is done to preserve the terms and conditions of using public data extracted from social media. 
+User data will be collected from Twitter. The API\vtick s will be used to gather the data. This will be done in order to have a corpus of data to perform the algorithms on. Afterwards, each user will be anonymized. This includes the username and the real name.  This anonymization is done to preserve the terms and conditions of using public data extracted from social media. 
 
 Any other data transformation necessary for the parameter or the algorithm will then be performed.
 
@@ -111,7 +109,7 @@ The majority of the iteration will involve implementing the given model in the l
 
 \subsubsection{Model Evaluation}
 
-For the next two to three days of the iteration, the model will be run on the collected data separately for Facebook and Twitter and the evaluation module will be run on the detected communities in order to measure the communities\vtick accuracy. This is done in order to evaluate how the selected parameter and algorithm performs on the collected data, which will be comparable at the end of the study to the results from other iterations, allowing the proponents to select which parameter-algorithm pair produces the most accurate communities in which particular social network.
+For the next two to three days of the iteration, the model will be run on the collected data for Twitter and the evaluation module will be run on the detected communities in order to measure the communities\vtick accuracy. This is done in order to evaluate how the selected parameter and algorithm performs on the collected data, which will be comparable at the end of the study to the results from other iterations, allowing the proponents to select which parameter-algorithm pair produces the most accurate communities in which particular social network.
 
 \subsubsection{Documentation}
 

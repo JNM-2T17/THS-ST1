@@ -11,8 +11,6 @@ A level-1 auxiliary file: appendix_C.aux
 Database file #1: myreferences.bib
 Warning--entry type for "Amor:2015" isn't style-file defined
 --line 1 of file myreferences.bib
-Warning--entry type for "McCarthy:2014" isn't style-file defined
---line 139 of file myreferences.bib
 Repeated entry---line 224 of file myreferences.bib
  : @article{Bakillah:2014
  :                       ,
@@ -53,10 +51,6 @@ Repeated entry---line 342 of file myreferences.bib
  : @inbook{Lim:2012:1
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 354 of file myreferences.bib
- : @online{McCarthy:2014
- :                      ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 372 of file myreferences.bib
  : @article{Papadopoulos:2012
  :                           ,
@@ -79,8 +73,7 @@ Repeated entry---line 431 of file myreferences.bib
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Ferrara:2012"
 Warning--I didn't find a database entry for "Mitchell:1997"
-Warning--I didn't find a database entry for "Newman:2003"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in West:2014
 Warning--No school in Xie:2012
-(There were 16 error messages)
+(There were 15 error messages)
