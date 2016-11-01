@@ -22,10 +22,12 @@ Amor, B.%
 \newblock
 \APACrefYearMonthDay{2015}{}{}.
 \newblock
-\APACrefbtitle {Community detection and role identification in directed
+{\BBOQ}\APACrefatitle {Community detection and role identification in directed
   networks: understanding the Twitter network of the care.data debate.}
   {Community detection and role identification in directed networks:
-  understanding the twitter network of the care.data debate.}
+  understanding the twitter network of the care.data debate.}{\BBCQ}
+\newblock
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -246,6 +248,30 @@ Java, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Lam%
+}{%
+Lam%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Lam:2016}
+\APACinsertmetastar {%
+Lam:2016}%
+\begin{APACrefauthors}%
+Lam, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Improving Twitter Community Detection through Contextual
+  Sentiment Analysis of Tweets} {Improving twitter community detection through
+  contextual sentiment analysis of tweets}.{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lancichinetti%
 , Radicchi%
 , Ramasco%
@@ -335,6 +361,28 @@ Lim, K\BPBI H.%
 \BIn{} \APACrefbtitle {Proceedings of the 23rd {ACM} Conference on Hypertext
   and Social Media (HT12).} {Proceedings of the 23rd {ACM} conference on
   hypertext and social media (ht12).}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mitchell%
+}{%
+Mitchell%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+Mitchell:1997}
+\APACinsertmetastar {%
+Mitchell:1997}%
+\begin{APACrefauthors}%
+Mitchell, T\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1997}.
+\newblock
+\APACrefbtitle {Machine Learning} {Machine learning}.
+\newblock
+\APACaddressPublisher{New York, NY, USA}{McGraw-Hill, Inc.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

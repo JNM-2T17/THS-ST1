@@ -6,39 +6,50 @@
 %                 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \chapter{Theoretical Framework}
 \label{sec:theoframe}
 
+
 This chapter discusses the algorithms, formulas, and existing procedures with regards to our study. This chapter is divided into four sections. The first section discusses data collection libraries. The second section discusses algorithms for community detection. The third section discusses algorithms for sentiment analysis and other similarity parameters used for community detection. The fourth section discusses community evaluation metrics.
+
 
 \section{Data Collection}
 
-To construct a graphical representation of the users and their social connections (friends lists), a custom crawler was designed by \citeA{Ferrara:2012}. The crawler, written in Java, made use of the Apache HTTP library (http://httpd.apache.org/apreq) to acquire data about Facebook users and their friends. One simple acquisition method used by this paper was the Breadth-First Search (BFS) algorithm. Starting from a root node (user), the node’s public friend list was obtained, and then for each friend, the algorithm is repeated. The algorithm terminated if a.) the third depth-level of friendship was completely covered, or b.) the algorithm exceeded a runtime of 10 days without termination. Data was then anonymized to hide references to the actual users.
+
+To construct a graphical representation of the users and their social connections (friends lists), a custom crawler was designed by (Ferrara, 2012). The crawler, written in Java, made use of the Apache HTTP library (http://httpd.apache.org/apreq) to acquire data about Facebook users and their friends. One simple acquisition method used by this paper was the Breadth-First Search (BFS) algorithm. Starting from a root node (user), the node’s public friend list was obtained, and then for each friend, the algorithm is repeated. The algorithm terminated if a.) the third depth-level of friendship was completely covered, or b.) the algorithm exceeded a runtime of 10 days without termination. Data was then anonymized to hide references to the actual users.
 
 In a paper on Community Detection in Twitter, \citeA{Java:2007} says that through the Twitter Developer API, it is possible to obtain time-bound data of the social network of users. Through the API, a directed graph G(V,E) was constructed, representing users (V), and their following networks (E). Public information per user was obtained, like profile information and location (using the Yahoo! Geocoding API).
 
-The proponents were also able to obtain a crawler for Twitter written by a fellow researcher conducting a similar study. The crawler, written in Python, utilizes the Tweepy framework (http://www.tweepy.org/), which is a wrapper for easily using the Twitter Developer API with Python. The crawler can be fed various search terms, and will return tweets matching those search terms.
+The proponents were also able to obtain a crawler for Twitter written by a fellow researcher conducting a similar study \cite{Lam:2016}. The crawler, written in Python, utilizes the Tweepy framework (http://www.tweepy.org/), which is a wrapper for easily using the Twitter Developer API with Python. The crawler can be fed various search terms, and will return tweets matching those search terms.
 
 \section{Community Detection}
 \label{sec:commdet}
 
+
 \citeA{Clauset:2004} presents an improvement to community detection algorithms. Other existing algorithms presented in this paper are correct logically, but are computationally expensive and cannot run over extremely large datasets in a reasonable amount of time. This paper presents an algorithm that is identical in terms of output but is significantly faster than existing algorithms in terms of runtime.
 
+
 The algorithm is based on the greedy optimization of modularity, which is a property that indicates the strength of division of a network into communities. The higher the modularity, the better the community structure. Given a graph with $n$ vertices and $m$ edges, the algorithm defines two quantities, namely:
+
 
 \begin{equation}
 e_{ij} = \frac{1}{2m} \sum_{vw}{A_{vw}\delta(c_v,i)\delta(c_w,i)}
 \end{equation}which is the fraction of edges that join vertices in community $i$ to vertices in community $j$, and
 
+
 \begin{equation}
 a_i = \frac{1}{2m} \sum_{v}{k_v\delta(c_v,i)}
 \end{equation}which is the fraction of ends of edges that are attached to vertices in community $i$. The algorithm then defines the modularity $Q$ as:
+
 
 \begin{equation}
 Q = \sum_{i}({e_{ii}-a_i^2})
 \end{equation}
 
-The algorithm finds the largest $Q$ that would result from merging two arbitrary communities, and merging those two communities. The algorithm's main offering is that it skips calculating $Q$ when the two communities have no edges between them. offering an increase in performance. The algorithm maintains a matrix $\Delta Q_{ij}$ for each pair i, j of communities with at least one edge between them, a max-heap $H$ containing the largest $Q$ for each row of the matrix, and a vector array with elements $a_{i}$. $\Delta Q_{ij}$ is defined as follows:
+
+The algorithm finds the largest $Q$ that would result from merging two arbitrary communities, and merging those two communities. The algorithm's main offering is that it skips calculating $Q$ when the two communities have no edges between them, offering an increase in performance. The algorithm maintains a matrix $\Delta Q_{ij}$ for each pair i, j of communities with at least one edge between them, a max-heap $H$ containing the largest $Q$ for each row of the matrix, and a vector array with elements $a_{i}$. $\Delta Q_{ij}$ is defined as follows:
+
 
 \begin{equation}
 \Delta Q_{ij} =
@@ -48,11 +59,14 @@ The algorithm finds the largest $Q$ that would result from merging two arbitrary
 \end{cases}
 \end{equation}
 
+
 and a as:
+
 
 \begin{equation}
 a_i = \frac{k_i}{2m}
 \end{equation}
+
 
 The algorithm runs as follows:
 (1) Calculate the initial values of $\Delta Q_{ij}$ and $a_{i}$, and populate the max-heap with the largest element of each row of the matrix $\Delta Q$.
@@ -60,27 +74,37 @@ The algorithm runs as follows:
 communities, update the matrix $\Delta Q$, the heap H, and $a_{i}$, and increment Q by $\Delta Q_{ij}$.
 (3) Repeat step 2 until only one community remains.
 
+
 The algorithm was run against purchase data from amazon.com. The data graph worked on was quite big, with 409,687 items and 2,464,630 edges. The algorithm was able to successfully structure the data into communities based mainly on purchasing information. The proponents were successful in discovering clear communities that correspond to specific topics or genres of books or music, indicating that the purchasing tendencies of Amazon customers are strongly correlated with subject matter.
+
 
 The proponents hope that this algorithm will allow datasets with millions of vertices and tens of millions of edges to be processed using current computing resources in an efficient manner \cite{Clauset:2004}.
 
+
 Node-centric algorithms involve the maximum clique detection problem which involves searching for a maximum complete subgraph of nodes in a network graph that are all adjacent to each other. The clique percolation method can find overlapping communities by finding cliques of size $k$, and then producing a clique graph, wherein two cliques are connected if they share $k-1$ nodes. Each connected element in this clique graph is then a community \cite{Tang:2010}.
 
+
 Hierarchy-centric algorithms come in two forms: divisive and agglomerative. In divisive clustering, the entire set of nodes starts out in one set and each time, each set is divided into two until each community only has one member. The division is done by finding the node with the lowest edge betweenness and removing it, since that node is most likely the node connecting two communities. Agglomerative clustering starts with each node in their own community and communities are joined if they increase the overall modularity of the set of communities. Modularity is given by
+
 
 \begin{equation}
 Q = \frac{1}{2m} \sum_{l = 1}^{k} \sum_{i \in C_l, j \in C_l} (A_{ij} - \frac{d_i d_j}{2m})
 \end{equation}where $m$ is the number of edges, $d_i$ is the degree of node $v_i$, $C_l$ being the $lth$ community, and $A_{ij}$ being the value in the adjacency matrix for node $v_i$ and $v_j$ \cite{Tang:2010} .
 
+
 \citeA{Bakillah:2014} sought to contribute to the field of extracting relevant information from social media by detecting geo-located communities in Twitter in disaster situations. The main disaster they focused on is the occurrence of typhoon Haiyan in the Philippines. 
 
+
 Social graphs of Twitter users related to the focus are created by comparing Twitter's different interaction nodes like follow relations, mentions and tweet content. The fast-greedy optimization of modularity (FGM) clustering algorithm enhanced with semantic similarity is used in order to handle the complex social graphs created. Modularity measures the quality of divisions of a network into communities. By maximizing the modularity between the generated graph structure and a random graph structure, the optimal clustering results can be obtained. This modularity is expressed through the quality function $Q$:
+
 
 \begin{equation}
 Q = \sum_{c = 1}^{n} \left [ \frac{l_c}{m} - \left (\frac{d_c}{2m} \right )^2 \right ]
 \end{equation}where $n$ is the number of clusters, $m$ is the total number of edges, $l_c$ is the total number of edges joining the vertices of cluster $c$ and $d_c$ is the sum of the expected random graph degree of the vertices of $c$. To achieve the largest quality change ($\Delta$$Q$), communities are progressively merged. The usage of quality function $Q$ and the merging of communities are the core steps of the FGM algorithm. Now, the FGM algorithm was enhanced by integrating graph based and text-based (text similarity measure) models to balance the importance of shared content versus graph structure. This will be discussed more in detail in section \ref{subsec:sentiana}.
 
+
 Together with FGM, the varied density-based spatial clustering of applications with noise spatial (VDBSCAN) clustering algorithm is used to get spatial communities at different time periods. This is done to divide thematic communities discussing same topics formed by the FGM algorithm into more meaningful sub-clusters. The discovery of geo-located communities could potentially help in identifying and locating incidents occurring during emergency situations.
+
 
 The aim of the VDBSCAN spatial clustering algorithm is to find spatial clusters based on regions with higher density. The algorithm is based on two parameters:
 \begin{enumerate}
@@ -89,10 +113,12 @@ The aim of the VDBSCAN spatial clustering algorithm is to find spatial clusters 
 \end{enumerate}
 Let $D$ be the set of points corresponding to the geo-located tweets found in a given thematic community and that were issued during time period T.
 
+
 The neighbour of point $p$ is expressed as:
 \begin{equation}
 N(p) = \{ q \in D|dist(p,q) \le r \}
 \end{equation}
+
 
 A cluster is generated based on the following properties, called ‘density-reachable’ and ‘density-connected’:
 \begin{enumerate}
@@ -106,79 +132,106 @@ A cluster is generated based on the following properties, called ‘density-reac
 	\item A point $q$ is density-connected to a point $p$ if there is a point $o$ such that $p$ and $q$ are density-reachable from $o$.
 \end{enumerate}
 
+
 A cluster is a non-empty subset of $D$ that satisfies the following properties:
 \begin{enumerate}
 	\item $\forall$ $p$, $q$, if $p$ $\in$ $C$ and $q$ is density - reachable from $p$, then $q$ $\in$ $C$ (maximality).
 	\item $\forall$ $p$, $q$ $\in$ $C$, $p$ is density - connected to $q$ (connectivity).
 \end{enumerate}
 
+
 The parameters r and MinPts are optimized automatically based on the variation in density of the data set.
 
+
 This research provides algorithms that could prove useful in getting the optimal clustering for detecting communities. It also gives an insight in considering the spatial and thematic properties of these communities \cite{Bakillah:2014}.
+
 
 \section{Similarity Parameters}
 This section outlines the basis/features/parameters used in detecting communities. It is divided into two subsections. The first subsection deals solely with sentiment analysis. The second subsection deals with other network and node parameters not related to sentiment analysis. 
 
+
 \subsection{Sentiment Analysis}
 \label{subsec:sentiana}
 
+
 \citeA{Zhang:2012} provided a formula to determine similarity in terms of text. 
+
 
 \begin{equation}
 sim_{text}(i,j) = \frac{1}{\sqrt{D_{js}(i,j)}}
 \end{equation}$D_{js}$ is the Jensen-Shannon Divergence between the two user’s topic probability distribution given by
 
+
 \begin{equation}
 D_{js}(i,j) = \frac{D_{kl}(UT_i \mid\mid M) + D_{kl}(UT_j \mid\mid M)}{2}
 \end{equation}where $M = \frac{UT_i + UT_j}{2}$ and $D_{kl}(P \mid\mid Q) = \sum_{i \in topics} P(i) \log{\frac{P(i)}{Q(i)}}$ and $UT_i$ is the probability distribution of user i for all topics. $UT_i[t]$ is the probability distribution for user i on topic t \cite{Zhang:2012}.
 
+
 \citeA{Bakillah:2014} enhanced the FGM algorithm with a similarity measure. A threshold $T$ for text similarity is used to determine whether two communities are similar enough to increase the priority of merging them. 0.2-0.3 was used as the value of $T$. The cosine similarity measure is used to compute similarity between the communities' set of terms:
+
 
 \begin{equation}
 Cosine similarity = \frac {A \cdot B}{||A|| ||B||} = \frac {\sum_{k = 1}^{l}(A_k \times B_k)}{\sqrt{\sum_{i = 1}^{n} (A_i)^2 \times \sum_{j = 1}^{m} (B_j)^2}}
 \end{equation}
 
+
 $A$ and $B$ represent the frequency of a term in the set of terms associated with the first and second community, respectively. The similarity value ranges from −1, meaning dissimilarity, to 1, meaning exact similarity.
 
+
 This measure can be used as a means for getting the similarity between different communities’ set of words when merging similar communities will be relevant to the proposed research \cite{Bakillah:2014}.
+
 
 A practical learning method that can be used for sentiment analysis is called the naive Bayes classifier. The naive Bayes classifier can be used for predicting the classification of a new instance based on classification done beforehand on a set of training data. Before the prediction is to be done, a set of training data will be the basis for the classification. Each instance in the set is described by a conjunction of attribute values and any target value from a finite set $V$ can be taken by the instance. The attribute values are assumed to be conditionally independent. The goal is to find the most probable target value, $v_{NB}$, given the attribute values($a_1$,$a_2$...$a_n$) in order to classify the new instance. \\ The naive Bayes classifier can be given as:
 \begin{equation}
 v_{NB} = \operatorname*{arg\,max}_{v_j \in V} \text{P}(v_j) \prod_{\substack{i}} \text{P}(a_i|v_j)
 \end{equation}
-where $v_{NB}$ is the max target value given by the classifier, $v_j$ is an element of the set of target values in $V$, P($v_j$) is the probability of $v_j$, the conjunction is the product of attributes given that $v_j$ occured or is the actual target value \cite{Mitchell:1997}. \\
+where $v_{NB}$ is the max target value given by the classifier, $v_j$ is an element of the set of target values in $V$, P($v_j$) is the probability of $v_j$, the conjunction is the product of attributes given that $v_j$ occurred or is the actual target value \cite{Mitchell:1997}. \\
 For sentiment analysis, the different sentiments, like positive or negative, or subjective or objective can be used as the set of target values. The words from the training data for the sentiment analysis will be the attribute values for the target value it can take \cite{Deitrick:2013}.
+
 
 \subsection{Other Parameters}
 
+
 URL similarity is given by the same formula as text similarity in section \ref{subsec:sentiana}, only using links instead of topics \cite{Zhang:2012}.
 
+
 Hashtag similarity is given by 
+
 
 \begin{equation}
 sim_{hashtag}(i,j) = \sum_{k=1}^n (1 - \left|{\frac{N_{ik}}{\left|{H_i}\right|} - \frac{N_{jk}}{\left|{H_j}\right|}}\right|)\frac{N_{ik} + N_{jk}}{\left|{H_i}\right| + \left|{H_k}\right|}
 \end{equation}where $N_{ik}$ is the number of times user $v_i$ used the hashtag $k$ while $H_i$ is the total hashtags used by $v_i$ \cite{Zhang:2012}.
 
+
 Following similarity is given by 
+
 
 \begin{equation}
 sim_{follow}(i,j) = \frac{c_{friend}}{\sqrt{\left|{Friend_i}\right|\left|{Friend_j}\right|}} + \frac{c_{follower}}{\sqrt{\left|{Follower_i}\right|\left|{Follower_j}\right|}}
 \end{equation}
 
+
 $\left|{Friend_i}\right|$ is the total number of users $v_i$ follows. $\left|{Follower_i}\right|$ is the total number of users that follow $v_i$. $c_{friend}$ represents the two users’ common friends. $c_{follower}$ represents the two users’ common followers \cite{Zhang:2012}.
 
+
 Retweeting similarity is given by 
+
 
 \begin{equation}
 sim_{retweet}(i,j) = \frac{c_{retweet}}{\sqrt{\left|{R_i}\right|\left|{R_j}\right|}} + \frac{n_{ij} + n_{ji}}{\left|{R_i}\right|\left|{R_j}\right|}
 \end{equation}
 
+
 $R_i$ is the number of users whom $v_i$ retweet. $c_{retweet}$ is the number of users both $v_i$ and $v_j$ retweet. $n_{ij}$ is the number of times $v_i$ retweeted $v_j$ and $n_{ji}$ is the inverse case \cite{Zhang:2012}. 
+
 
 \section{Community Evaluation Metrics}
 
+
 The average number of mutual following links per user per community (FPUPC) can be used to evaluate communities \cite{Zhang:2012}. 
 
-A measure called modularity is a method used for measuring the strength of communities through comparing the strength of connections within a community to the strength of random connections between vertices \cite{Newman:2004}. This makes use of the formula indicated in section \ref{sec:commdet}.
+
+A measure called modularity is a method used for measuring the strength of communities through comparing the strength of connections within a community to the strength of random connections between vertices.\cite{Newman:2004} This makes use of the formula indicated in section \ref{sec:commdet}.
+
 
 Modularities approaching 1 indicate strong community structures; these values usually range from 0.3 to 0.7. However, a modularity of 0 would indicate communities that are only as good as randomly produced ones \cite{Newman:2004}. 

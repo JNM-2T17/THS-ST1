@@ -35,12 +35,11 @@
 \contentsline {section}{\numberline {4.2}System Objectives}{30}
 \contentsline {section}{\numberline {4.3}System Scope and Limitations}{31}
 \contentsline {section}{\numberline {4.4}Architectural Design}{31}
-\contentsline {section}{\numberline {4.5}System Functions}{33}
-\contentsline {subsection}{\numberline {4.5.1}Collect Data}{33}
-\contentsline {subsection}{\numberline {4.5.2}Select Algorithm}{34}
-\contentsline {subsection}{\numberline {4.5.3}Select Parameter}{35}
-\contentsline {subsection}{\numberline {4.5.4}Generate Communities}{36}
-\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{36}
+\contentsline {section}{\numberline {4.5}System Functions}{34}
+\contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{34}
+\contentsline {subsection}{\numberline {4.5.2}Select Parameter}{35}
+\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{36}
+\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{37}
 \contentsline {chapter}{\numberline {A}Research Ethics Documents}{38}
 \contentsline {chapter}{\numberline {B}Resource Persons}{39}
 \contentsline {chapter}{References}{40}
