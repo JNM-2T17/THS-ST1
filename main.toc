@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{34}
 \contentsline {subsection}{\numberline {4.5.2}Select Parameter}{35}
 \contentsline {subsection}{\numberline {4.5.3}Generate Communities}{36}
-\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{37}
-\contentsline {chapter}{\numberline {A}Research Ethics Documents}{38}
-\contentsline {chapter}{\numberline {B}Resource Persons}{39}
-\contentsline {chapter}{References}{40}
+\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{38}
+\contentsline {chapter}{\numberline {A}Research Ethics Documents}{39}
+\contentsline {chapter}{\numberline {B}Resource Persons}{40}
+\contentsline {chapter}{References}{41}
