@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {4.5}System Functions}{34}
 \contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{34}
 \contentsline {subsection}{\numberline {4.5.2}Select Parameter}{35}
-\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{36}
+\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{37}
 \contentsline {section}{\numberline {4.6}Physical Environment and Resources}{38}
 \contentsline {chapter}{\numberline {A}Research Ethics Documents}{39}
 \contentsline {chapter}{\numberline {B}Resource Persons}{40}

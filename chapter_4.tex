@@ -174,8 +174,14 @@ Acceptance Criteria:
 \label{us:selectalgo}
 
 
-The user selects an algorithm in order to set a required parameter for generating communities.
+The user selects an algorithm in order to set a required parameter for generating communities. Figure \ref{fig:selectalgo} shows a sample screen for this user story.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Mockup_SelectAlgorithm}
+	\caption{Sample Screen of User Story \ref{us:selectalgo}}
+	\label{fig:selectalgo}	
+\end{figure}
 
 Pre-condition: The system has data from Twitter. The main menu is the current screen.
 
@@ -208,7 +214,14 @@ Acceptance Criteria:
 \label{us:selectparam}
 
 
-The user selects a similarity parameter in order to set a required parameter for generating communities.
+The user selects a similarity parameter in order to set a required parameter for generating communities. Figure \ref{fig:selectparam} shows a sample screen for this user story.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Mockup_SelectParameter}
+	\caption{Sample Screen of User Story \ref{us:selectparam}}
+	\label{fig:selectparam}	
+\end{figure}
 
 
 Pre-condition: The system has finished collecting data from the data collection module. User story \ref{us:selectalgo} has been finished.
@@ -244,13 +257,13 @@ Acceptance Criteria:
 
 
 The user asks the system to generate communities to see the graphical representation of the communities and to see the 
-evaluation metrics of the generated communities for the selected algorithm-parameter combination. \ref{fig:graph} shows a prototype for the produced graph.
+evaluation metrics of the generated communities for the selected algorithm-parameter combination. Figure \ref{fig:gencom} shows a sample screen for this user story.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{Thesis-Graph}
-	\caption{Prototype of graphical representation of communities}
-	\label{fig:graph}	
+	\includegraphics[width=0.5\textwidth]{Mockup_GenerateCommunities}
+	\caption{Sample Screen of User Story \ref{us:gencom}}
+	\label{fig:gencom}	
 \end{figure}
 
 Pre-condition: The system has finished collecting data from the data collection module. User stories \ref{us:selectalgo} and \ref{us:selectparam} have been finished.
