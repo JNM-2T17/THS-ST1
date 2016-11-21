@@ -12,26 +12,19 @@
 
 
 This chapter is an overview of the research undertaken in the field of community detection in social networks. 
-This chapter is divided into four sections which are the current state of the technology, research objectives, scope and limitations, and significance of the research.
+This chapter is divided into five sections which are the current state of the technology, research objectives, scope and limitations, significance of the research, and the research methodology.
 
 
 \section{Overview of the Current State of Technology}
 \label{sec:overview}
 
-
+// add more about volume of data
 Social media has become much more prevalent in recent years. People can now participate in what is called microblogging, a way for people to share their thoughts, status, and opinions in short posts, like Twitter, where posts are limited to one-hundred and forty characters \cite{Java:2007}. As such, these social media platforms are a prime opportunity to mine sentiments and to detect communities in the social network. Social media can also be used to build user networks through users following other users, for example, in Twitter, creating a network of accounts.
 
 
-Community detection is clustering multiple users into groups where users within the group are more similar than users from outside the group \cite{Tang:2010}. Community detection is necessary because it observes the interaction of multiple users in relation to specific similarity parameters such as followed users, post topics, and mentioned users.
+Community detection is clustering multiple users into groups where users within the group are more similar than users from outside the group \cite{Tang:2010}. Community detection is necessary because it observes the interaction of multiple users in relation to specific similarity parameters such as followed users, post topics, and mentioned users. Numerous studies on community detection have already been done. 
 
-
-Numerous studies on community detection have already been done. \citeA{Zhang:2012} defined features such as text content similarity, URL similarity, hashtag similarity, following similarity, and retweeting similarity that can be used to identify similarity between two nodes and aggregated these similarities to detect communities. Their software provided the listings of users in each community. \citeA{Lim:2012:1} performed an inverted version in which they first defined interests and based on these interests, sought to extract communities from the network by identifying users that follow the top six celebrities, users with more than 10,000 followers, relating to the given interest. Their software generated the size and clustering coefficient of each community 
-
-
-Individual opinions of one specific user towards another were also studied by \citeA{West:2014} combining sentiment analysis, using an L2-regularized logistic-regression classifier, with network analysis, inferring one user\vtick s opinion of another by analyzing their common links with other users. Their output was the area under the curve of the receiver operating characteristic (AUC/ROC) and the precision-recall curves (AUC/negPR). 
-
-
-In addition to these works, some visualizations have already been created such as SocialHelix by \citeA{Cao:2015}, which uses the temporal extent of social communities, topics or events discussed, and user responses to topics and events to classify users into two sides of the argument. They then depict the two sides of an argument as strands in a double helix and their intersections defines events.
+\citeA{Zhang:2012} defined features such as text content similarity, URL similarity, hashtag similarity, following similarity, and retweeting similarity that can be used to identify similarity between two nodes and aggregated these similarities to detect communities. Their software provided the listings of users in each community. \citeA{Lim:2012:1} performed an inverted version in which they first defined interests and based on these interests, sought to extract communities from the network by identifying users that follow the top six celebrities, users with more than 10,000 followers, relating to the given interest. Their software generated the size and clustering coefficient of each community. Individual opinions of one specific user towards another were also studied by \citeA{West:2014} combining sentiment analysis, using an L2-regularized logistic-regression classifier, with network analysis, inferring one user\vtick s opinion of another by analyzing their common links with other users. Their output was the area under the curve of the receiver operating characteristic (AUC/ROC) and the precision-recall curves (AUC/negPR). In addition to these works, some visualizations have already been created such as SocialHelix by \citeA{Cao:2015}, which uses the temporal extent of social communities, topics or events discussed, and user responses to topics and events to classify users into two sides of the argument. They then depict the two sides of an argument as strands in a double helix and their intersections defines events.
 
 
 However, most of these studies already had preselected features and algorithms to work with or had specific features in mind before implementing their models. It would be interesting to compare the quality of communities produced by different combinations of algorithms and similarity parameters.
@@ -45,7 +38,7 @@ However, most of these studies already had preselected features and algorithms t
 \label{sec:generalobjective}
 
 
-To determine which combination of community detection algorithm and similarity parameter produces the best communities
+To design and implement a tool that will detect communities based on varied combinations of detection and similarity measures.
 
 
 \subsection{Specific Objectives}
@@ -54,10 +47,9 @@ To determine which combination of community detection algorithm and similarity p
 
 \begin{enumerate}
 	\item To build a corpus of social media data;
-	\item To determine the various techniques and algorithms in detecting communities;
-	\item To determine the parameters/features to be used in detecting the communities;
-	\item To determine how to evaluate the correctness of the detected communities given a particular combination of algorithm and similarity parameter;
-	\item To implement a tool for the visualization of detected communities using the gathered information
+	\item To survey the various techniques and algorithms in detecting communities;
+	\item To review the parameters/features to be used in detecting the communities;
+	\item To survey evaluation metrics for the detected communities.
 \end{enumerate}
 
 
