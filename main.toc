@@ -4,42 +4,51 @@
 \contentsline {subsection}{\numberline {1.2.1}General Objective}{2}
 \contentsline {subsection}{\numberline {1.2.2}Specific Objectives}{2}
 \contentsline {section}{\numberline {1.3}Scope and Limitations of the Research}{3}
-\contentsline {section}{\numberline {1.4}Significance of the Research}{4}
+\contentsline {section}{\numberline {1.4}Significance of the Research}{3}
 \contentsline {section}{\numberline {1.5}Research Methodology}{4}
 \contentsline {subsection}{\numberline {1.5.1}Preparation}{4}
 \contentsline {subsection}{\numberline {1.5.2}Iterative Experimentation}{5}
 \contentsline {subsubsection}{Similarity Parameter Selection}{5}
 \contentsline {subsubsection}{Community Detection Algorithm Selection}{5}
-\contentsline {subsubsection}{Data Collection}{6}
+\contentsline {subsubsection}{Data Collection}{5}
 \contentsline {subsubsection}{Model Design}{6}
 \contentsline {subsubsection}{Model Implementation}{6}
 \contentsline {subsubsection}{Model Evaluation}{6}
-\contentsline {subsubsection}{Documentation}{7}
+\contentsline {subsubsection}{Documentation}{6}
 \contentsline {subsection}{\numberline {1.5.3}Analysis and Finalization}{7}
 \contentsline {section}{\numberline {1.6}Calendar of Activities}{8}
 \contentsline {chapter}{\numberline {2}Review of Related Literature}{9}
-\contentsline {section}{\numberline {2.1}Community Detection}{9}
-\contentsline {section}{\numberline {2.2}Similarity Parameters}{15}
-\contentsline {subsection}{\numberline {2.2.1}Sentiment Analysis}{15}
-\contentsline {subsection}{\numberline {2.2.2}Other Parameters}{16}
-\contentsline {section}{\numberline {2.3}Community Evaluation Metrics}{18}
-\contentsline {chapter}{\numberline {3}Theoretical Framework}{22}
-\contentsline {section}{\numberline {3.1}Data Collection}{22}
-\contentsline {section}{\numberline {3.2}Community Detection}{23}
-\contentsline {section}{\numberline {3.3}Similarity Parameters}{27}
-\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{27}
-\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{28}
-\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{29}
-\contentsline {chapter}{\numberline {4}The System Model, Algorithm, and Design}{30}
-\contentsline {section}{\numberline {4.1}System Overview}{30}
-\contentsline {section}{\numberline {4.2}System Objectives}{30}
-\contentsline {section}{\numberline {4.3}System Scope and Limitations}{31}
-\contentsline {section}{\numberline {4.4}Architectural Design}{31}
-\contentsline {section}{\numberline {4.5}System Functions}{34}
-\contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{34}
-\contentsline {subsection}{\numberline {4.5.2}Select Parameter}{35}
-\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{37}
-\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{38}
-\contentsline {chapter}{\numberline {A}Research Ethics Documents}{39}
-\contentsline {chapter}{\numberline {B}Resource Persons}{40}
-\contentsline {chapter}{References}{41}
+\contentsline {section}{\numberline {2.1}Communities in large and complex networks}{9}
+\contentsline {section}{\numberline {2.2}Communities in social media}{11}
+\contentsline {subsection}{\numberline {2.2.1}Community Detection Algorithms}{11}
+\contentsline {subsection}{\numberline {2.2.2}Similarity Parameters}{13}
+\contentsline {section}{\numberline {2.3}Communities based on common interests}{14}
+\contentsline {subsection}{\numberline {2.3.1}Community Detection}{14}
+\contentsline {subsection}{\numberline {2.3.2}Similarity Parameters}{15}
+\contentsline {subsection}{\numberline {2.3.3}Community Evaluation Metrics}{15}
+\contentsline {section}{\numberline {2.4}Communities based on sentiment analysis}{15}
+\contentsline {subsection}{\numberline {2.4.1}Community Detection Algorithms}{16}
+\contentsline {subsection}{\numberline {2.4.2}Similarity Parameters}{16}
+\contentsline {section}{\numberline {2.5}Communities based on information flow}{17}
+\contentsline {subsection}{\numberline {2.5.1}Similarity Parameters}{17}
+\contentsline {section}{\numberline {2.6}Community visualization}{18}
+\contentsline {chapter}{\numberline {3}Theoretical Framework}{20}
+\contentsline {section}{\numberline {3.1}Data Collection}{20}
+\contentsline {section}{\numberline {3.2}Community Detection}{21}
+\contentsline {section}{\numberline {3.3}Similarity Parameters}{24}
+\contentsline {subsection}{\numberline {3.3.1}Sentiment Analysis}{25}
+\contentsline {subsection}{\numberline {3.3.2}Other Parameters}{26}
+\contentsline {section}{\numberline {3.4}Community Evaluation Metrics}{27}
+\contentsline {chapter}{\numberline {4}The System Model, Algorithm, and Design}{28}
+\contentsline {section}{\numberline {4.1}System Overview}{28}
+\contentsline {section}{\numberline {4.2}System Objectives}{28}
+\contentsline {section}{\numberline {4.3}System Scope and Limitations}{29}
+\contentsline {section}{\numberline {4.4}Architectural Design}{29}
+\contentsline {section}{\numberline {4.5}System Functions}{32}
+\contentsline {subsection}{\numberline {4.5.1}Select Algorithm}{32}
+\contentsline {subsection}{\numberline {4.5.2}Select Parameter}{33}
+\contentsline {subsection}{\numberline {4.5.3}Generate Communities}{34}
+\contentsline {section}{\numberline {4.6}Physical Environment and Resources}{36}
+\contentsline {chapter}{\numberline {A}Research Ethics Documents}{37}
+\contentsline {chapter}{\numberline {B}Resource Persons}{38}
+\contentsline {chapter}{References}{39}

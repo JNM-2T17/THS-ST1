@@ -35,7 +35,7 @@ The system must be able to generate communities using a specific algorithm and s
 
 \section{System Scope and Limitations}
 Data collection is necessary in order to detect the communities from the social network.
-Data collected from the social networks will only include the user posts, the follow network (or friend network if from Facebook),
+Data collected from the social networks will only include the user posts, the follow network,
 hashtag usage, and mentions.
 
 
@@ -85,22 +85,22 @@ The UML class diagram for the \texttt{model module} is found in figure \ref{fig:
 \newpage
 
 
-Data collection is done via the \texttt{tweepy} API. The data collection methodology is as follows - three public twitter accounts with a significant amount of followers will be selected. For each account, the first 1000 most recent retrievable tweets will be obtained. Next, a breadth-first search (BFS) will be done for that account\vtick s followers, and their 500 most recent tweets will be retrieved as well. 
+Data collection is done via the \texttt{tweepy} API. The data collection methodology is as follows - three public twitter accounts with a significant amount of followers will be selected. For each account, their most recent retrievable tweets will be obtained. Next, a breadth-first search (BFS) will be done for that account\vtick s followers, and their most recent tweets will be retrieved as well. 
 
 
 
 
-The \texttt{UserCrawler.py} file has a function \texttt{get\_all\_tweets(username)}, which is responsible for retrieving the most recent 500 tweets of a particular user, as specified by the username parameter. Initially, three accounts (seeds) will be chosen. Each seed needs to have at least 200 followers. These three seeds are then pushed into a queue. An iterative process then begins, which is described as follows:
+The \texttt{UserCrawler.py} file has a function \texttt{get\_all\_tweets(usernames, nTweets, max)}, which is responsible for retrieving the most recent \texttt{nTweets} tweets of a list of users, as specified by the \texttt{usernames} parameter. Each of the usernames is initially pushed into a queue. An iterative process then begins, which is described as follows:
 
 
 
 
-At the start of each iteration, a user is popped from the head of the queue. This user’s most recent 500 tweets are collected, and the list of users, representing the account\vtick s followers, is obtained. For each user in that list, the algorithm checks if it has seen that particular user previously. If not, the user is added to the end of the queue.
+At the start of each iteration, a user is popped from the head of the queue. This user’s most recent \texttt{nTweets} tweets are collected, and the list of users, representing the account\vtick s followers, is obtained. For each user in that list, the algorithm checks if it has seen that particular user previously. If not, the user is added to the end of the queue.
 
 
 
 
-This iterative process continues until either a depth of 3 in the BFS tree is reached, or a count of 500,000 tweets is reached.
+This iterative process continues until \texttt{max} total tweets are obtained.
 
 
 
