@@ -15,11 +15,11 @@ This chapter discusses the algorithms, formulas, and existing procedures with re
 
 
 \section{Data Collection}
-
+ 
 \citeA{Java:2007} discusses that it is possible to obtain time-bound data of the social network of users through the use of the Twitter Developer API. Through the API, a directed graph G(V,E) was constructed, representing users (V), and their following networks (E). Public information per user was obtained, like profile information and location (using the Yahoo! Geocoding API). 
-
+ 
 A crawler for Twitter written by a fellow researcher conducting a similar study was obtained for collecting data from Twitter (Lam, 2016). The crawler, written in Python, utilizes the Tweepy framework (http://www.tweepy.org/), which is a wrapper for using the Twitter Developer API with Python. The crawler can be fed various search terms, and returns tweets matching the search terms.
-
+ 
 \section{Community Detection}
 \label{sec:commdet}
 
@@ -173,7 +173,7 @@ This measure can be used as a means for getting the similarity between different
 
 A practical learning method that can be used for sentiment analysis is called the naive Bayes classifier. The naive Bayes classifier is used for predicting the classification of a new instance based on classification done beforehand on a set of training data. Before the prediction can be done, a set of training data is used as the basis for the classification. Each instance in the set is described by a conjunction of attribute values and any target value from a finite set $V$ can be taken by the instance. The attribute values are assumed to be conditionally independent. The goal is to find the most probable target value, $v_{NB}$, given the attribute values($a_1$,$a_2$...$a_n$) in order to classify the new instance. \\ The naive Bayes classifier can be given as:
 \begin{equation}
-	v_{NB} = \operatorname*{arg\,max}_{v_j \in V} \text{P}(v_j) \prod_{\substack{i}} \text{P}(a_i|v_j)
+v_{NB} = \operatorname*{arg\,max}_{v_j \in V} \text{P}(v_j) \prod_{\substack{i}} \text{P}(a_i|v_j)
 \end{equation}
 where $v_{NB}$ is the max target value given by the classifier, $v_j$ is an element of the set of target values in $V$, P($v_j$) is the probability of $v_j$, the conjunction is the product of attributes given that $v_j$ occurred or is the actual target value \cite{Mitchell:1997}. \\
 For sentiment analysis, the different sentiments, like positive or negative, or subjective or objective can be used as the set of target values. The words from the training data for the sentiment analysis will be the attribute values for the target value it can take \cite{Deitrick:2013}.
@@ -182,7 +182,7 @@ For sentiment analysis, the different sentiments, like positive or negative, or 
 \subsection{Other Parameters}
 
 
-URL similarity is given by the same formula as text similarity, only using links instead of topics \cite{Zhang:2012}.
+URL similarity is given by the same formula as text similarity in section \ref{subsec:sentiana}.
 
 
 Hashtag similarity is given by 
@@ -221,7 +221,7 @@ $R_i$ is the number of users whom $v_i$ retweet. $c_{retweet}$ is the number of 
 The average number of mutual following links per user per community (FPUPC) can be used to evaluate communities \cite{Zhang:2012}. 
 
 
-A measure called modularity is a method used for measuring the strength of communities through comparing the strength of connections within a community to the strength of random connections between vertices.\cite{Newman:2004}
+A measure called modularity is a method used for measuring the strength of communities through comparing the strength of connections within a community to the strength of random connections between vertices.\cite{Newman:2004} This makes use of the formula indicated in section \ref{sec:commdet}.
 
 
 Modularities approaching 1 indicate strong community structures; these values usually range from 0.3 to 0.7. However, a modularity of 0 would indicate communities that are only as good as randomly produced ones \cite{Newman:2004}. 

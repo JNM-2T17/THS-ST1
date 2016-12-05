@@ -20,6 +20,9 @@ This chapter discusses the features, capabilities, and limitations of existing r
 There are several community detection algorithms presently being used, though not all of them are suitable for use in larger and more complex or dynamic networks, such as the social networks this research aims to focus on. Several other researches have been done to address this.
 
 
+\subsection{Finding community structure in very large networks}
+
+
 \citeA{Clauset:2004} presented an alternative to existing algorithms that were successfully implemented but were also computationally expensive. Because of this, they could not run over extremely large datasets in a reasonable amount of time. This paper presented an algorithm that is identical in terms of output to the existing algorithms identified, but is significantly faster than them in terms of runtime.
 
 
@@ -33,7 +36,13 @@ The algorithm was run against purchase data from amazon.com. The data graph work
 This algorithm may allow datasets with millions of vertices and tens of millions of edges to be processed using current computing resources in an efficient manner \cite{Clauset:2004}.
 
 
-Another study was done by \citeA{Xie:2012} who focused on two topics of social network analysis, namely opinion dynamics and community detection. One of the challenges the study mentioned is that of large-scale networks. To address this, the study presented an algorithm called Speaker-listener Label Propagation Algorithm (SLPA) for fast overlapping community detection. Another challenge identified was the detection of communities in dynamic networks where changes happen often and in real-time. This is similar to most real world applications. To detect dynamic networks such as this, an algorithm for incrementally updating communities instead of profiling each snapshot, called LabelRankT, was proposed. This algorithm claimed to drastically outperform existing detection algorithms such as facetNet and iLCD, with similar results \cite{Xie:2012}. 
+\subsection{Agent-based dynamics models for opinion spreading and community detection in large-scale social networks}
+
+
+\citeA{Xie:2012} focused on two topics of social network analysis, namely opinion dynamics and community detection. One of the challenges the study mentioned is that of large-scale networks. To address this, the study presented an algorithm called Speaker-listener Label Propagation Algorithm (SLPA) for fast overlapping community detection. Another challenge identified was the detection of communities in dynamic networks where changes happen often and in real-time. This is similar to most real world applications. To detect dynamic networks such as this, an algorithm for incrementally updating communities instead of profiling each snapshot, called LabelRankT, was proposed. This algorithm claimed to drastically outperform existing detection algorithms such as facetNet and iLCD, with similar results \cite{Xie:2012}. 
+
+
+\subsection{Finding statistically significant communities in networks}
 
 
 \citeA{Lancichinetti:2011} detailed another approach to performing community detection across a network. The authors of this paper argued that while there already exists a large variety of techniques for detecting communities, there is still a need for more in-depth techniques that can handle different types of datasets, and the ``subtleties'' of community structure. This paper presents a technique called OSLOM (Order Statistics Local Optimization Method) than can detect clusters in networks accounting for edge directions, edge weights, overlapping communities, hierarchies and community dynamics. They claim that the algorithm performs just as well as other existing ones, and have been applied on several real networks. It is also freely available for anyone who wants to use it \cite{Lancichinetti:2011}.
@@ -45,7 +54,7 @@ Another study was done by \citeA{Xie:2012} who focused on two topics of social n
 There may be approaches to community detection that are particularly appropriate for addressing the features and structure of social networks. Many researches have explored the algorithms that could be used and similarity parameters that could be extracted in order to perform community detection on these types of networks.
 
 
-\subsection{Community Detection Algorithms}
+\subsection{Community detection and mining in social media}
 
 
 \citeA{Tang:2010} discussed different aspects of community detection in social media, including the characteristics of social media, representative tasks of computing with social media, and challenges associated with this field. They felt that social media could serve as an avenue to study human interaction and collaboration on an unparalleled scale. Multiple community detection approaches were discussed as well, namely the node-centric, network-centric, and hierarchy-centric approaches.
@@ -60,6 +69,9 @@ Network-centric algorithms involves vertex similarity, which is the similarity o
 Hierarchy-centric algorithms come in two forms: divisive and agglomerative. In divisive clustering, the entire set of nodes starts out in one set. Each set is then divided into two until each community only has one member. The division is done by finding the node with the lowest edge betweenness and removing it, since that node is most likely the node connecting two communities. Agglomerative clustering starts with each node in their own community. Communities are then combined if they increase the overall modularity of the set of communities \cite{Tang:2010}.
 
 
+\subsection{Community detection in social media}
+
+
 Another study, in the form of a survey, was done by \citeA{Papadopoulos:2012} who discussed methods of community detection in social media, comparing different aspects of specific methods, and discussing possible incremental applications of these methods. This survey aimed to address two main elements left unaddressed in existing related survey articles, namely performance, in terms of aspects such as computational complexity and memory requirements, as well as the interpretation of results of community detection by social media applications.
 
 
@@ -67,6 +79,39 @@ Classes of community detection methods discussed include cohesive subgraph disco
 
 
 The survey led to conclusions about the concept and structure of communities in the context of social media, to a rough classification of existing community detection methods, and to determining which methods are most appropriate for social media mining applications.
+
+
+\subsection{Following the follower: Detecting communities with common interests on Twitter}
+
+
+\citeA{Lim:2012:1} aimed to detect communities that share common interests on Twitter. This commonality was based on linkages among followers of celebrities, with each celebrity being associated with a specific interest category. This was done to help markets identify target groups with common interests. However, their approach differs from the typical paradigm of identifying communities and then identifying the interests of these communities, because, instead, they identified interests before extracting communities from these interests.
+
+
+Given this set of fans common to the most popular celebrities in the specific interest, $P$, they used the Infomap Algorithm and the Clique Percolation Method to detect communities in $P$. Each interest was represented by the top 6 most followed celebrities associated with that interest. Google and Wikipedia were used to identify which interests a celebrity represented. Afterwards, all users that followed those 6 celebrities were selected. 200,858 random users were selected to ace as the control group. The algorithm produced more communities and larger communities than the control group, as well as more consistent communities, having a higher clustering coefficient.
+
+
+\subsection{Mutually enhancing community detection and sentiment analysis on twitter networks}
+
+
+\citeA{Deitrick:2013} sought to use sentiment classification to analyze communities in Twitter believing that harvesting information from these online social networks (OSN) would aid in the fields of politics and marketing. 
+
+
+Their process is as follows: The follower network was represented as a weighted directed graph, each with initial weight of 1. To augment this, replies, mentions, retweets, hashtags, and sentiment classification of tweets were also harvested. These factors adjusted the weights in the graph. For community detection, the Infomap algorithm and Speaker-listener Label Propagation Algorithm(SLPA) were run. 
+
+
+Generally, the network with updated weights produced communities with greater modularity. Of the two algorithms, the Infomap algorithm performed better. Recurring sentiment analysis was also helped by performing the aforementioned algorithms on the accounts that have already been placed in detected communities, which permits more in-depth analysis into the user\vtick s sentiment since it could be analyzed within the context of the detected community.
+
+
+\citeA{Deitrick:2013} used a subjective/objective and positive/negative Naive Bayes classifier in order to extract sentiments from tweets. To do this, all tweets were converted to lowercase; hashtags, usernames, urls were replaced with twitterhashtag, twitterusername, and twitterurl respectively; the tweet text was tokenized; repeated punctuation was replaced with the plus sign e.g. ``!!!'' would become ``!+''; sentence punctuation was split into separate tokens; non-sentence punctuation was removed. Ten-fold cross validation was used in training the classifier. Weights in the graph mentioned in section 2.1 were then updated if two users posted something with a similar sentiment and similar hashtag. This research shows a clearly defined process in performing sentiment analysis, particularly the data cleaning step \cite{Deitrick:2013}.
+
+
+\subsection{Word usage mirrors community structure in the online social network Twitter}
+
+
+Another study done by \citeA{Bryden:2013} focused on word usage and language features of social media posts and aimed to determine whether or not members of identified communities were similar based on these. This was done through the analysis of 75 million mutual tweets among 189 thousand Twitter users. This study focused on the connection of language has to network structure, in order to explore the potential of understanding society through analysis of communication on social media. Communities were characterized through the words used in messages sent by members of the community; the most representative words from each community were identified through the Z-scores of each word’s usage. The Euclidean distances between word usage frequencies for each pair of communities was the basis for determining how significant the differences between these communities’ word usages were. The research determined that there were many similarities in words, word fragments and word lengths among tweets from users in identified groups, including word usage that was not related to subject matter. Through language structure alone, the researchers were also able to determine a users\vtick network communities. This research focused on the detection of communities through language used on social media. As it involves on community detection on social media as well, the proposed research may make use of the approach presented in this research \cite{Bryden:2013}.
+
+
+\subsection{Geo-located community detection in twitter with enhanced fast-greedy optimization of modularity: The case study of typhoon haiyan}
 
 
 \citeA{Bakillah:2014} sought to contribute to the field of extracting relevant information from social media by detecting geo-located communities in Twitter in disaster situations. The main disaster they focused on is the occurrence of typhoon Haiyan in the Philippines. 
@@ -81,10 +126,10 @@ Together with FGM, the varied density-based spatial clustering of applications w
 \citeA{Bakillah:2014} provided algorithms that could prove useful in getting the optimal clustering for detecting communities. It also gives an insight in considering the spatial and thematic properties of these communities.
 
 
-\subsection{Similarity Parameters}
-
-
 \citeA{Bakillah:2014} enhanced the FGM algorithm with a similarity measure. A threshold $T$ for text similarity is used to determine whether two communities are similar enough to increase the priority of merging them. 0.2-0.3 was used as the value of $T$. The cosine similarity measure is used to compute similarity between the communities\vtick set of terms. This measure can be used as a means for getting the similarity between different communities\vtick set of words when merging similar communities will be relevant to the proposed research \cite{Bakillah:2014}.
+
+
+\subsection{Followers are not enough: A multifaceted approach to community detection in online social networks}
 
 
 \citeA{Darmon:2015} aimed to present an approach to community detection that is multifaceted, focusing not only on structure-based communities, but on other types as well, namely activity-based, topic-based, and interaction based communities. Communities can be defined similarly or differently according to these types, so in order to come up with a more accurate and dynamic picture of a community, all types of communities, as well as the overlaps among these communities, should be taken into account. This study was done through the analysis of a Twitter dataset in order to assign representative weights for each community type. Activity-based communities were derived through the timing of users\vtick tweets, topic-based communities were derived from hashtag similarities, and interaction-based communities were derived from retweets and mentions. 
@@ -99,16 +144,10 @@ For topic-based communities, edges on the network of users and followers are wei
 \section{Communities based on common interests}
 
 
-Among the possible bases for the formation of communities is the common interests of the members of those communities. Existing studies took different approaches in identifying what those interests were and which of these interests corresponded to each member of the network.
+Among the possible bases for the formation of communities is the common interests of the members of those communities.
 
 
-\subsection{Community Detection}
-
-
-\citeA{Lim:2012:1} aimed to detect communities that share common interests on Twitter. This commonality was based on linkages among followers of celebrities, with each celebrity being associated with a specific interest category. This was done to help markets identify target groups with common interests. However, their approach differs from the typical paradigm of identifying communities and then identifying the interests of these communities, because, instead, they identified interests before extracting communities from these interests.
-
-
-Given this set of fans common to the most popular celebrities in the specific interest, $P$, they used the Infomap Algorithm and the Clique Percolation Method to detect communities in $P$. Each interest was represented by the top 6 most followed celebrities associated with that interest. Google and Wikipedia were used to identify which interests a celebrity represented. Afterwards, all users that followed those 6 celebrities were selected. 200,858 random users were selected to ace as the control group. The algorithm produced more communities and larger communities than the control group, as well as more consistent communities, having a higher clustering coefficient. 
+\subsection{Community discovery in Twitter based on user interests}
 
 
 \citeA{Zhang:2012} sought to identify communities in Twitter based on common interests. The study aimed to address user recommendation and tweet recommendation as well as viral marketing to specific target groups. To identify the communities, they first computed specific feature similarities, then aggregated these features to compute for the final user similarity, and then they used classical clustering algorithms to detect the communities.
@@ -120,43 +159,10 @@ The specific features they used were textual contents. Each data point was the e
 In aggregating these similarities, the weighted sum of the previous similarities was computed to get the final similarity. Finally, k-means clustering was used to detect the communities based on their computed similarities. 
 
 
-\subsection{Similarity Parameters}
-
-
 \citeA{Zhang:2012} provided a formula to determine similarity in terms of text, providing a metric to determine the similarity of two users in terms of post content. Also provided were a few formulas to determine similarity in terms of URL, hashtag, following, and retweeting similarity, which may be used to measure similarity as well as provide a means to aggregate similarities from multiple parameters \cite{Zhang:2012}. 
 
 
-\subsection{Community Evaluation Metrics}
-
-
 \citeA{Zhang:2012} used the average number of mutual following links per user per community (FPUPC) to evaluate their communities. Based on this, appropriate weights for the aggregation were found by first performing their k-means clustering algorithm using only one feature similarity for each of the similarities and extracting the FPUPC. Afterwards, they gave each feature similarity a weight based on a formula. The number of clusters, k, used in the k-means clustering algorithm was also tweaked to get the maximum FPUPC. They concluded that they were successful in generating relatively accurate communities due to the incrementally increasing FPUPC after adjusting the weights. This provides a possible evaluation metric that may be used, as well as a method to provide weights for feature similarities \cite{Zhang:2012}.
-
-
-\section{Communities based on sentiment analysis}
-
-
-Another possible basis in forming communities is the sentiment of posts on social media. The following studies made use of a few different methods in extracting this data.
-
-
-\subsection{Community Detection Algorithms}
-
-
-\citeA{Deitrick:2013} sought to use sentiment classification to analyze communities in Twitter believing that harvesting information from these online social networks (OSN) would aid in the fields of politics and marketing. 
-
-
-Their process is as follows: The follower network was represented as a weighted directed graph, each with initial weight of 1. To augment this, replies, mentions, retweets, hashtags, and sentiment classification of tweets were also harvested. These factors adjusted the weights in the graph. For community detection, the Infomap algorithm and Speaker-listener Label Propagation Algorithm(SLPA) were run. 
-
-
-Generally, the network with updated weights produced communities with greater modularity. Of the two algorithms, the Infomap algorithm performed better. Recurring sentiment analysis was also helped by performing the aforementioned algorithms on the accounts that have already been placed in detected communities, which permits more in-depth analysis into the user\vtick s sentiment since it could be analyzed within the context of the detected community.
-
-
-\subsection{Similarity Parameters}
-
-
-\citeA{Deitrick:2013} used a subjective/objective and positive/negative Naive Bayes classifier in order to extract sentiments from tweets. To do this, all tweets were converted to lowercase; hashtags, usernames, urls were replaced with twitterhashtag, twitterusername, and twitterurl respectively; the tweet text was tokenized; repeated punctuation was replaced with the plus sign e.g. ``!!!'' would become ``!+''; sentence punctuation was split into separate tokens; non-sentence punctuation was removed. Ten-fold cross validation was used in training the classifier. Weights in the graph mentioned in section 2.1 were then updated if two users posted something with a similar sentiment and similar hashtag. This research shows a clearly defined process in performing sentiment analysis, particularly the data cleaning step \cite{Deitrick:2013}.
-
-
-Another study done by \citeA{Bryden:2013} focused on word usage and language features of social media posts and aimed to determine whether or not members of identified communities were similar based on these. This was done through the analysis of 75 million mutual tweets among 189 thousand Twitter users. This study focused on the connection of language has to network structure, in order to explore the potential of understanding society through analysis of communication on social media. Communities were characterized through the words used in messages sent by members of the community; the most representative words from each community were identified through the Z-scores of each word’s usage. The Euclidean distances between word usage frequencies for each pair of communities was the basis for determining how significant the differences between these communities’ word usages were. The research determined that there were many similarities in words, word fragments and word lengths among tweets from users in identified groups, including word usage that was not related to subject matter. Through language structure alone, the researchers were also able to determine a users\vtick network communities. This research focused on the detection of communities through language used on social media. As it involves on community detection on social media as well, the proposed research may make use of the approach presented in this research \cite{Bryden:2013}.
 
 
 \section{Communities based on information flow}
@@ -165,13 +171,13 @@ Another study done by \citeA{Bryden:2013} focused on word usage and language fea
 Communities on social media may be determined based on the flow and propagation of information through the network.
 
 
+\subsection{Community detection and role identication in directed networks: understanding the Twitter network of the care.data debate}
+
+
 \citeA{Amor:2015} sought to detect communities and to identify roles in the Twitter network on the subject of the care.data debate using graph-theoretic methods, one of them being the Markov Stability method. There are two networks constructed from the obtained data relating to the care.data debate: follower network and retweet network. The flow-based community detection method Markov Stability was used for identifying interest communities in the follower network which resulted in a 13-way partition composed of four large communities and nine minor ones. It is also used for the retweet network in order to find conversation communities which resulted into eight communities. 
 
 
 The Markov Stability method works on the behaviour of dynamical processes on a network. This potentially reveals meaningful structure about the graph. It can extract different coarse-grained descriptions of the graph at different time scales. In addition, this method can find non-clique communities.
-
-
-\subsection{Similarity Parameters}
 
 
 \citeA{Amor:2015} included some sentiment analysis on the tweets gathered, particularly on negative tweets, as these comprised most from sample they took. They divided the concerns of these negative tweets into three:
@@ -210,39 +216,39 @@ In the end, all test users were impressed by the visualization and agreed with t
 \newpage
 \begin{landscape}
 Table \ref{summaryT} shows a summary of our review of related literature with respect to community detection, similarity parameters, and evaluation metrics for each paper.
-\begin{longtabu} to 1.5\textwidth{|X|X|X|X|X|}
-\caption {Summary of Review of Related Literature}\label{summaryT} \\
-\hline
-Reference & Community Detection Algorithms & Sentiment Analysis Model & Other parameters & Community Evaluation \\
-\hline
-\cite{Clauset:2004} & Greedy Optimization of Modularity & & & \\
-\hline
-\cite{Tang:2010} & Clique percolation method, similarity detection, divisive and agglomerative clustering & & & \\
-\hline
-\cite{Lancichinetti:2011} & Order Statistics Local Optimization Method & & & \\
-\hline
-\cite{Lim:2012:0} & Topic driven community detection, Infomap method, Clique percolation method & & & \\
-\hline
-\cite{Lim:2012:1} & Topic driven community detection, Infomap method, Clique percolation method & & & \\
-\hline
-\cite{Papadopoulos:2012} & Comparison of Existing Methods & & & \\
-\hline
-\cite{Xie:2012} & Speaker-listener Label Propagation Algorithm, LabelRankT & & Correlations between different snapshots of the network over time & \\
-\hline
-\cite{Zhang:2012} & k-means clustering & Similarity Formula for Text & Similarity Formula for URL, Hashtag, Follower, and Retweeting & FPUPC metric \\
-\hline
-\cite{Bryden:2013} & & Characterization of communities through word usage & & \\
-\hline
-\cite{Deitrick:2013} & Weighted directed graph, Infomap Algorithm, SLPA & Subjective / Objective, Positive / Negative Naive Bayes Classifier & replies, mentions, retweets, hashtags & \\
-\hline
-\cite{Bakillah:2014} & enhanced fast-greedy optimization of modularity (FGM) algorithm with similarity measure, varied density-based spatial clustering of applications with noise spatial (VDBSCAN) algorithm & cosine similarity measure & mentions, follow relations, shared URLs, Tweet content & \\
-\hline
-\cite{Amor:2015} & Markov Stability & & care.data debate - implementation, scheme concept and execution & \\
-\hline
-\cite{Cao:2015} & Data abstraction design, Hadoop tool & Temporal extent of posts, topics and events, user responses, Statistical Linguistic Sentiment Analysis & & \\
-\hline
-\cite{Darmon:2015} & & & Activity-based communities, Topic-based communities, Interaction-based communities & \\
-\hline
-\end{longtabu}
+	\begin{longtabu} to 1.5\textwidth{|X|X|X|X|X|}
+	\caption {Summary of Review of Related Literature}\label{summaryT} \\
+	\hline
+	Reference & Community Detection Algorithms & Sentiment Analysis Model & Other parameters & Community Evaluation & Output\\
+	\hline
+	\cite{Clauset:2004} & Greedy Optimization of Modularity & Not mentioned & Not mentioned & Not mentioned & Application of hierarchical agglomeration algorithm \\
+	\hline
+	\cite{Tang:2010} & Clique percolation method, similarity detection, divisive and agglomerative clustering & Not mentioned & Not mentioned & Not mentioned & Introduction to community detection in social media \\
+	\hline
+	\cite{Lancichinetti:2011} & Order Statistics Local Optimization Method (OSLOM) & Not mentioned & Not mentioned & Not mentioned & Application of OSLOM \\
+	\hline
+	\cite{Lim:2012:0} & Topic driven community detection, Infomap method, Clique percolation method & Not mentioned & Not mentioned & Not mentioned & Communities based on interest categories \\
+	\hline
+	\cite{Lim:2012:1} & Topic driven community detection, Infomap method, Clique percolation method & Not mentioned & Not mentioned & Not mentioned & Communities based on interest categories \\
+	\hline
+	\cite{Papadopoulos:2012} & Comparison of Existing Methods & Not mentioned & Not mentioned & Not mentioned & Overview of community detection and classification of classification of community detection algorithms \\
+	\hline
+	\cite{Xie:2012} & Speaker-listener Label Propagation Algorithm (SLPA), LabelRankT & Not mentioned & Correlations between different snapshots of the network over time & Not mentioned & Application of SLPA and LabelRankT \\
+	\hline
+	\cite{Zhang:2012} & k-means clustering & Similarity Formula for Text & Similarity Formula for URL, Hashtag, Follower, and Retweeting & FPUPC metric & Communities based on aggregated features \\
+	\hline
+	\cite{Bryden:2013} & Not mentioned & Characterization of communities through word usage & Not mentioned & Not mentioned & Communities based on word frequency \\
+	\hline
+	\cite{Deitrick:2013} & Weighted directed graph, Infomap Algorithm, SLPA & Subjective / Objective, Positive / Negative Naive Bayes Classifier & replies, mentions, retweets, hashtags & Not mentioned & Communities based on community detection and sentiment analysis \\
+	\hline
+	\cite{Bakillah:2014} & enhanced fast-greedy optimization of modularity (FGM) algorithm with similarity measure, varied density-based spatial clustering of applications with noise spatial (VDBSCAN) algorithm & cosine similarity measure & mentions, follow relations, shared URLs, Tweet content & Not mentioned & Geo-located communities \\
+	\hline
+	\cite{Amor:2015} & Markov Stability & & care.data debate - implementation, scheme concept and execution & Not mentioned & Groups, topics of discussion per group, and user roles in care.data debate \\
+	\hline
+	\cite{Cao:2015} & Data abstraction design, Hadoop tool & Temporal extent of posts, topics and events, user responses, Statistical Linguistic Sentiment Analysis & Not mentioned & Not mentioned & SocialHelix, a visual analysis system \\
+	\hline
+	\cite{Darmon:2015} & Not mentioned & Not mentioned & Activity-based communities, Topic-based communities, Interaction-based communities & Not mentioned & Multiple sets of communities each based on a different weighting scheme \\
+	\hline
+	\end{longtabu}
 \end{landscape}
 \end{comment}
