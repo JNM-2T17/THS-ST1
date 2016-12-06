@@ -7,8 +7,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
 \chapter{The System Model, Algorithm, and Design}
 \label{sec:sysmodel}
+
+
 
 
 \section{System Overview}
@@ -20,8 +24,12 @@ to the communities based from the chosen algorithm and parameter. The system onl
 can select an algorithm, a parameter, and generate and view communities.
 
 
+
+
 \section{System Objectives}
 The system must be able to generate communities using a specific algorithm and similarity parameter. The specific objectives are as follows:
+
+
 
 
 \begin{itemize}
@@ -33,14 +41,20 @@ The system must be able to generate communities using a specific algorithm and s
 \end{itemize}
 
 
+
+
 \section{System Scope and Limitations}
 Data collection is necessary in order to detect the communities from the social network.
-Data collected from the social networks will only include the user posts, the follow network,
+Data collected from the social networks will only include the user posts, the follow network (or friend network if from Facebook),
 hashtag usage, and mentions.
+
+
 
 
 Cleaning the data is necessary in order to reduce noise in the data as well as to ensure the veracity of the data. This 
 would improve the detected communities.
+
+
 
 
 The only algorithms to be considered in the system are divisive and agglomerative hierarchical clustering and fast greedy optimization
@@ -49,8 +63,12 @@ the subjective/objective valence of posts, the cosine similarity of frequency of
 and mentions.
 
 
+
+
 The visualization is necessary in order to provide a more intuitive representation of the communities. The visualization is limited to 
 a graphical visualization to be displayed via HTML5.
+
+
 
 
 Displaying the evaluation metrics is necessary to show the comparative effectiveness of different algorithm and parameter combinations.
@@ -60,16 +78,26 @@ The evaluation metrics to be considered are the modularity of the communities an
 
 
 
+
+
+
+
 \section{Architectural Design}
 The system will follow the MVC architecture. The \texttt{view module} will use HTML5, CSS3, and Javascript. The 
 \texttt{controller and model} will be implemented as code.
+
+
 
 
 The \texttt{model module} will include a \texttt{data collection class}, \texttt{representative models} for the data collected, and a \texttt{computational model}.
 The UML class diagram for the \texttt{model module} is found in figure \ref{fig:uml}.
 
 
+
+
 \newpage
+
+
 
 
 \begin{landscape}
@@ -82,10 +110,18 @@ The UML class diagram for the \texttt{model module} is found in figure \ref{fig:
 \end{landscape}
 
 
+
+
 \newpage
 
 
-Data collection is done via the \texttt{tweepy} API. The data collection methodology is as follows - three public twitter accounts with a significant amount of followers will be selected. For each account, their most recent retrievable tweets will be obtained. Next, a breadth-first search (BFS) will be done for that account\vtick s followers, and their most recent tweets will be retrieved as well. 
+
+
+Data collection is done via the \texttt{tweepy} API. The data collection methodology is as follows - a list of user accounts will be specified. This list can be chosen in a way that the users are random, or that the users have some already known relationship which the algorithms will attempt to detect. For each account, their most recent retrievable tweets will be obtained. Next, a breadth-first search (BFS) will be done for that account\vtick s followers, and their most recent tweets will be retrieved as well. 
+
+
+
+
 
 
 
@@ -95,7 +131,15 @@ The \texttt{UserCrawler.py} file has a function \texttt{get\_all\_tweets(usernam
 
 
 
+
+
+
+
 At the start of each iteration, a user is popped from the head of the queue. This user’s most recent \texttt{nTweets} tweets are collected, and the list of users, representing the account\vtick s followers, is obtained. For each user in that list, the algorithm checks if it has seen that particular user previously. If not, the user is added to the end of the queue.
+
+
+
+
 
 
 
@@ -105,7 +149,15 @@ This iterative process continues until \texttt{max} total tweets are obtained.
 
 
 
+
+
+
+
 In parallel with the above algorithm, a separate csv file is also generated. This csv file will contain information about the users\vtick following network. Each row of the csv file will begin with the user id of the particular user, followed by the user id\vtick s of all the accounts that user is following.
+
+
+
+
 
 
 
@@ -115,7 +167,13 @@ To anonymize the data, all json elements that may point back to the user are rem
 
 
 
+
+
+
+
 For the \texttt{data representation}, this comprises a \texttt{User class} and a \texttt{Tweet class}.
+
+
 
 
 The \texttt{computational model} will have a central class \texttt{Clusterer} which takes a list of users as an attribute, 
@@ -127,39 +185,58 @@ runs the algorithm and produces a list of Community objects, which have two deri
 these Communities and can also return the aggregate $modularity$ and $FPUPC$ of the set of detected communities.
 
 
+
+
 The \texttt{controller} simply interfaces all the model submodules. It checks on startup if the data collection module is done collecting and cleaning data. It passes the data collected, represented as User and Post classes, to the \texttt{Clusterer} class, after setting an algorithm and parameter. This produces the Community objects that the controller then passes as part of the HTTP response.
+
+
 
 
 The \texttt{view module} will be implemented with HTML5, CSS3, and Javascript. 
 
 
+
+
 \section{System Functions}
+
+
 
 
 This section outlines the different functions of the system.
 
 
-\begin{comment}
-\subsection{Collect Data}
+
+
+\subsection{Load Users}
 \label{us:colldat}
+
+
 
 
 The user prompts the system to collect new data to have a more updated dataset to extract communities from.
 
 
+
+
 Pre-condition: The system is running. (This is automatically run on server startup.)
+
+
 
 
 Scenario:
 \begin{enumerate}
-\item The user chooses to collect data.
-\item The system collects data from Twitter and cleans the data.
-\item The system displays a progress bar during this process.
-\item The system notifies the user that data collection and cleaning is finished.
+\item The user chooses to load users.
+\item The user selects a csv file to load.
+\item The system displays a progress bar during this process to show the progress of the upload..
+\item The system notifies the user that user loading is finished..
 \end{enumerate}
 
 
+
+
 Post-condition: The system now has an updated dataset to extract communities from.
+
+
 
 
 Acceptance Criteria:
@@ -167,14 +244,18 @@ Acceptance Criteria:
 \item Test if there is stored data. (User story \ref{us:gencom} should output proper communities.)
 \item Test if data is clean.
 \end{itemize}
-\end{comment}
+
+
 
 
 \subsection{Select Algorithm}
 \label{us:selectalgo}
 
 
+
+
 The user selects an algorithm in order to set a required parameter for generating communities. Figure \ref{fig:selectalgo} shows a sample screen for this user story.
+
 
 \begin{figure}[h]
 	\centering
@@ -183,7 +264,10 @@ The user selects an algorithm in order to set a required parameter for generatin
 	\label{fig:selectalgo}	
 \end{figure}
 
+
 Pre-condition: The system has data from Twitter. The main menu is the current screen.
+
+
 
 
 Scenario:
@@ -196,8 +280,12 @@ Scenario:
 \end{enumerate}
 
 
+
+
 Post-condition: The system has an algorithm to use for generating communities. The ``Select Parameter'' option
 is now enabled in the main menu. The allowed parameters have been enabled in the Select Parameter screen.
+
+
 
 
 Acceptance Criteria:
@@ -210,11 +298,16 @@ Acceptance Criteria:
 \end{itemize}
 
 
+
+
 \subsection{Select Parameter}
 \label{us:selectparam}
 
 
+
+
 The user selects a similarity parameter in order to set a required parameter for generating communities. Figure \ref{fig:selectparam} shows a sample screen for this user story.
+
 
 \begin{figure}[h]
 	\centering
@@ -224,7 +317,11 @@ The user selects a similarity parameter in order to set a required parameter for
 \end{figure}
 
 
+
+
 Pre-condition: The system has finished collecting data from the data collection module. User story \ref{us:selectalgo} has been finished.
+
+
 
 
 Scenario:
@@ -237,8 +334,12 @@ Scenario:
 \end{enumerate}
 
 
+
+
 Post-condition: The system has a similarity parameter to use for generating communities. The ``Generate Communities'' option
 has been enabled in the main menu.
+
+
 
 
 Acceptance Criteria:
@@ -252,12 +353,17 @@ Acceptance Criteria:
 \end{itemize}
 
 
+
+
 \subsection{Generate Communities}
 \label{us:gencom}
 
 
+
+
 The user asks the system to generate communities to see the graphical representation of the communities and to see the 
 evaluation metrics of the generated communities for the selected algorithm-parameter combination. Figure \ref{fig:gencom} shows a sample screen for this user story.
+
 
 \begin{figure}[h]
 	\centering
@@ -266,7 +372,10 @@ evaluation metrics of the generated communities for the selected algorithm-param
 	\label{fig:gencom}	
 \end{figure}
 
+
 Pre-condition: The system has finished collecting data from the data collection module. User stories \ref{us:selectalgo} and \ref{us:selectparam} have been finished.
+
+
 
 
 Scenario:
@@ -277,8 +386,12 @@ Scenario:
 \end{enumerate}
 
 
+
+
 Post-condition: The system is now displaying a graphical representation of the communities and the value of the evaluation
 metrics.
+
+
 
 
 Acceptance Criteria:
@@ -289,9 +402,43 @@ Acceptance Criteria:
 \end{itemize}
 
 
+\subsection{Save Community}
+\label{us:savedat}
+
+
+
+
+The user saves a community to be able to do further processing on the community.
+
+
+
+
+Pre-condition: The system is displaying communities.
+
+
+
+
+Scenario:
+\begin{enumerate}
+\item The user chooses a community.
+\item The user selects to save the community.
+\item The system displays a progress bar during this process to show the progress of the download.
+\item The system notifies the user that the file download is finished.
+\end{enumerate}
+
+
+
+
+Post-condition: The user now has a file that can have further processing performed on.
+
+
+
+
+Acceptance Criteria:
+\begin{itemize}
+\item Test if the file is valid and can be loaded properly
+\end{itemize}
+
+
 \section{Physical Environment and Resources}
 The software was developed using Python as a language and Django as a framework for the web application. Python 3.5 is required to run the code. The web application must be run by a server that supports Django 1.10.1. 
-
-
-
-

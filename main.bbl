@@ -248,30 +248,6 @@ Java, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Lam%
-}{%
-Lam%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-Lam:2016}
-\APACinsertmetastar {%
-Lam:2016}%
-\begin{APACrefauthors}%
-Lam, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Improving Twitter Community Detection through Contextual
-  Sentiment Analysis of Tweets} {Improving twitter community detection through
-  contextual sentiment analysis of tweets}.{\BBCQ}
-\newblock
-
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Lancichinetti%
 , Radicchi%
 , Ramasco%
@@ -302,10 +278,10 @@ Lancichinetti, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-K.~Lim%
+Lim%
 \ \BBA {} Datta%
 }{%
-K.~Lim%
+Lim%
 \ \BBA {} Datta%
 }{%
 {\protect \APACyear {2012}}%
@@ -332,85 +308,6 @@ Lim, K.%
 \APACaddressPublisher{}{Association for Computing Machinery}.
 \newblock
 \begin{APACrefDOI} \doi{10.1145/2309996.2310052} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-K\BPBI H.~Lim%
-\ \BBA {} Datta%
-}{%
-K\BPBI H.~Lim%
-\ \BBA {} Datta%
-}{%
-{\protect \APACyear {2012}}%
-}]{%
-Lim:2012:0}
-\APACinsertmetastar {%
-Lim:2012:0}%
-\begin{APACrefauthors}%
-Lim, K\BPBI H.%
-\BCBT {}\ \BBA {} Datta, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Finding twitter communities with common interests using
-  following links of celebrities} {Finding twitter communities with common
-  interests using following links of celebrities}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Proceedings of the 23rd {ACM} Conference on Hypertext
-  and Social Media (HT12).} {Proceedings of the 23rd {ACM} conference on
-  hypertext and social media (ht12).}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Mitchell%
-}{%
-Mitchell%
-}{%
-{\protect \APACyear {1997}}%
-}]{%
-Mitchell:1997}
-\APACinsertmetastar {%
-Mitchell:1997}%
-\begin{APACrefauthors}%
-Mitchell, T\BPBI M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1997}.
-\newblock
-\APACrefbtitle {Machine Learning} {Machine learning}.
-\newblock
-\APACaddressPublisher{New York, NY, USA}{McGraw-Hill, Inc.}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Newman%
-\ \BBA {} Girvan%
-}{%
-Newman%
-\ \BBA {} Girvan%
-}{%
-{\protect \APACyear {2004}}%
-}]{%
-Newman:2004}
-\APACinsertmetastar {%
-Newman:2004}%
-\begin{APACrefauthors}%
-Newman, M\BPBI E\BPBI J.%
-\BCBT {}\ \BBA {} Girvan, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2004}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Finding and evaluating community structure in networks}
-  {Finding and evaluating community structure in networks}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Physical Review E Phys. Rev. E}{69}{2}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.1103/physreve.69.026113} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

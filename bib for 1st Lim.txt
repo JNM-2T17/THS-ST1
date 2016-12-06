@@ -1,0 +1,6 @@
+@inproceedings{Lim:2012:0,
+	title={Finding twitter communities with common interests using following links of celebrities},
+	author={Kwan Hui Lim and Amitava Datta},
+	booktitle={Proceedings of the 23rd {ACM} Conference on Hypertext and Social Media (HT12)},
+	year={2012}
+}

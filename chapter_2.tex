@@ -90,6 +90,24 @@ The survey led to conclusions about the concept and structure of communities in 
 Given this set of fans common to the most popular celebrities in the specific interest, $P$, they used the Infomap Algorithm and the Clique Percolation Method to detect communities in $P$. Each interest was represented by the top 6 most followed celebrities associated with that interest. Google and Wikipedia were used to identify which interests a celebrity represented. Afterwards, all users that followed those 6 celebrities were selected. 200,858 random users were selected to ace as the control group. The algorithm produced more communities and larger communities than the control group, as well as more consistent communities, having a higher clustering coefficient.
 
 
+\subsection{Community discovery in Twitter based on user interests}
+
+
+\citeA{Zhang:2012} sought to identify communities in Twitter based on common interests. The study aimed to address user recommendation and tweet recommendation as well as viral marketing to specific target groups. To identify the communities, they first computed specific feature similarities, then aggregated these features to compute for the final user similarity, and then they used classical clustering algorithms to detect the communities.
+
+
+The specific features they used were textual contents. Each data point was the entirety of a user\vtick s tweets. Latent Dirichlet Allocation was used to identify latent topics from the user\vtick s tweets. URL similarity was also detected, finding which users share similar links. Hashtag similarity was also analyzed. The social structure of users was also analyzed, which includes following similarity and retweeting similarity. 
+
+
+In aggregating these similarities, the weighted sum of the previous similarities was computed to get the final similarity. Finally, k-means clustering was used to detect the communities based on their computed similarities. 
+
+
+\citeA{Zhang:2012} provided a formula to determine similarity in terms of text, providing a metric to determine the similarity of two users in terms of post content. Also provided were a few formulas to determine similarity in terms of URL, hashtag, following, and retweeting similarity, which may be used to measure similarity as well as provide a means to aggregate similarities from multiple parameters \cite{Zhang:2012}. 
+
+
+\citeA{Zhang:2012} used the average number of mutual following links per user per community (FPUPC) to evaluate their communities. Based on this, appropriate weights for the aggregation were found by first performing their k-means clustering algorithm using only one feature similarity for each of the similarities and extracting the FPUPC. Afterwards, they gave each feature similarity a weight based on a formula. The number of clusters, k, used in the k-means clustering algorithm was also tweaked to get the maximum FPUPC. They concluded that they were successful in generating relatively accurate communities due to the incrementally increasing FPUPC after adjusting the weights. This provides a possible evaluation metric that may be used, as well as a method to provide weights for feature similarities \cite{Zhang:2012}.
+
+
 \subsection{Mutually enhancing community detection and sentiment analysis on twitter networks}
 
 
@@ -129,48 +147,6 @@ Together with FGM, the varied density-based spatial clustering of applications w
 \citeA{Bakillah:2014} enhanced the FGM algorithm with a similarity measure. A threshold $T$ for text similarity is used to determine whether two communities are similar enough to increase the priority of merging them. 0.2-0.3 was used as the value of $T$. The cosine similarity measure is used to compute similarity between the communities\vtick set of terms. This measure can be used as a means for getting the similarity between different communities\vtick set of words when merging similar communities will be relevant to the proposed research \cite{Bakillah:2014}.
 
 
-\subsection{Followers are not enough: A multifaceted approach to community detection in online social networks}
-
-
-\citeA{Darmon:2015} aimed to present an approach to community detection that is multifaceted, focusing not only on structure-based communities, but on other types as well, namely activity-based, topic-based, and interaction based communities. Communities can be defined similarly or differently according to these types, so in order to come up with a more accurate and dynamic picture of a community, all types of communities, as well as the overlaps among these communities, should be taken into account. This study was done through the analysis of a Twitter dataset in order to assign representative weights for each community type. Activity-based communities were derived through the timing of users\vtick tweets, topic-based communities were derived from hashtag similarities, and interaction-based communities were derived from retweets and mentions. 
-
-
-For topic-based communities, edges on the network of users and followers are weighted depending on the number of common hashtags between each user and follower pair. Interaction-based communities are defined by three weighting schemes. The first scheme considers the number of tweets follower $f$ retweeted from user $u$. The second scheme considers the number of tweets wherein user $u$ mentions follower $f$. The third and final scheme takes the arithmetic mean of the mentions and retweets.
-
-
-\citeA{Darmon:2015} determined that the multifaceted approach to community detection could aid in better understanding the structure of online communities and in finding communities in social media that would otherwise be hidden \cite{Darmon:2015}.
-
-
-\section{Communities based on common interests}
-
-
-Among the possible bases for the formation of communities is the common interests of the members of those communities.
-
-
-\subsection{Community discovery in Twitter based on user interests}
-
-
-\citeA{Zhang:2012} sought to identify communities in Twitter based on common interests. The study aimed to address user recommendation and tweet recommendation as well as viral marketing to specific target groups. To identify the communities, they first computed specific feature similarities, then aggregated these features to compute for the final user similarity, and then they used classical clustering algorithms to detect the communities.
-
-
-The specific features they used were textual contents. Each data point was the entirety of a user\vtick s tweets. Latent Dirichlet Allocation was used to identify latent topics from the user\vtick s tweets. URL similarity was also detected, finding which users share similar links. Hashtag similarity was also analyzed. The social structure of users was also analyzed, which includes following similarity and retweeting similarity. 
-
-
-In aggregating these similarities, the weighted sum of the previous similarities was computed to get the final similarity. Finally, k-means clustering was used to detect the communities based on their computed similarities. 
-
-
-\citeA{Zhang:2012} provided a formula to determine similarity in terms of text, providing a metric to determine the similarity of two users in terms of post content. Also provided were a few formulas to determine similarity in terms of URL, hashtag, following, and retweeting similarity, which may be used to measure similarity as well as provide a means to aggregate similarities from multiple parameters \cite{Zhang:2012}. 
-
-
-\citeA{Zhang:2012} used the average number of mutual following links per user per community (FPUPC) to evaluate their communities. Based on this, appropriate weights for the aggregation were found by first performing their k-means clustering algorithm using only one feature similarity for each of the similarities and extracting the FPUPC. Afterwards, they gave each feature similarity a weight based on a formula. The number of clusters, k, used in the k-means clustering algorithm was also tweaked to get the maximum FPUPC. They concluded that they were successful in generating relatively accurate communities due to the incrementally increasing FPUPC after adjusting the weights. This provides a possible evaluation metric that may be used, as well as a method to provide weights for feature similarities \cite{Zhang:2012}.
-
-
-\section{Communities based on information flow}
-
-
-Communities on social media may be determined based on the flow and propagation of information through the network.
-
-
 \subsection{Community detection and role identication in directed networks: understanding the Twitter network of the care.data debate}
 
 
@@ -194,6 +170,18 @@ The Markov Stability method works on the behaviour of dynamical processes on a n
 No formula or representation was given as to how tweets were categorized between these three concern categories. However, this opens up the idea of having specific parameters related to the focus of the community detection, in this case with regards to the care.data debate, instead of general parameters concerning the social site\vtick s interaction modes \cite{Amor:2015}.
 
 
+\subsection{Followers are not enough: A multifaceted approach to community detection in online social networks}
+
+
+\citeA{Darmon:2015} aimed to present an approach to community detection that is multifaceted, focusing not only on structure-based communities, but on other types as well, namely activity-based, topic-based, and interaction based communities. Communities can be defined similarly or differently according to these types, so in order to come up with a more accurate and dynamic picture of a community, all types of communities, as well as the overlaps among these communities, should be taken into account. This study was done through the analysis of a Twitter dataset in order to assign representative weights for each community type. Activity-based communities were derived through the timing of users\vtick tweets, topic-based communities were derived from hashtag similarities, and interaction-based communities were derived from retweets and mentions. 
+
+
+For topic-based communities, edges on the network of users and followers are weighted depending on the number of common hashtags between each user and follower pair. Interaction-based communities are defined by three weighting schemes. The first scheme considers the number of tweets follower $f$ retweeted from user $u$. The second scheme considers the number of tweets wherein user $u$ mentions follower $f$. The third and final scheme takes the arithmetic mean of the mentions and retweets.
+
+
+\citeA{Darmon:2015} determined that the multifaceted approach to community detection could aid in better understanding the structure of online communities and in finding communities in social media that would otherwise be hidden \cite{Darmon:2015}.
+
+
 \section{Community visualization}
 
 
@@ -212,10 +200,9 @@ In implementation, the data was first filtered through the removal of unrelated 
 In the end, all test users were impressed by the visualization and agreed with the researchers’ model for the visualization. All test users felt that divergence identification was made easy due to the visualization. 
 
 
-\begin{comment}
 \newpage
 \begin{landscape}
-Table \ref{summaryT} shows a summary of our review of related literature with respect to community detection, similarity parameters, and evaluation metrics for each paper.
+This table shows a summary of our review of related literature with respect to community detection, similarity parameters, and evaluation metrics for each paper.
 	\begin{longtabu} to 1.5\textwidth{|X|X|X|X|X|}
 	\caption {Summary of Review of Related Literature}\label{summaryT} \\
 	\hline
@@ -249,6 +236,5 @@ Table \ref{summaryT} shows a summary of our review of related literature with re
 	\hline
 	\cite{Darmon:2015} & Not mentioned & Not mentioned & Activity-based communities, Topic-based communities, Interaction-based communities & Not mentioned & Multiple sets of communities each based on a different weighting scheme \\
 	\hline
-	\end{longtabu}
+\end{longtabu}
 \end{landscape}
-\end{comment}

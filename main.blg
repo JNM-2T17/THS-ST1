@@ -9,69 +9,10 @@ A level-1 auxiliary file: chapter_4.aux
 A level-1 auxiliary file: appendix_B.aux
 A level-1 auxiliary file: appendix_C.aux
 Database file #1: myreferences.bib
-Repeated entry---line 243 of file myreferences.bib
- : @article{Bakillah:2014
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 263 of file myreferences.bib
- : @article{Bryden:2013
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 279 of file myreferences.bib
- : @article{Cao:2015
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 297 of file myreferences.bib
- : @article{Clauset:2004
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 312 of file myreferences.bib
- : @article{Darmon:2015
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 327 of file myreferences.bib
- : @article{Deitrick:2013
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 337 of file myreferences.bib
- : @inproceedings{Java:2007
- :                         ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 357 of file myreferences.bib
- : @article{Lancichinetti:2011
- :                            ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 371 of file myreferences.bib
- : @inproceedings{Lim:2012:0
- :                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 379 of file myreferences.bib
- : @inbook{Lim:2012:1
- :                   ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 420 of file myreferences.bib
- : @article{Papadopoulos:2012
- :                           ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 451 of file myreferences.bib
- : @book{Tang:2010
- :                ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 463 of file myreferences.bib
- : @article{West:2014
- :                   ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 472 of file myreferences.bib
- : @phdthesis{Xie:2012
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 484 of file myreferences.bib
- : @article{Zhang:2012
- :                    ,
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Mitchell:1997"
+Warning--I didn't find a database entry for "Newman:2004"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Amor:2015
-Warning--No journal in Lam:2016
 Warning--No journal in West:2014
 Warning--No school in Xie:2012
-(There were 15 error messages)
+(There were 5 warnings)
